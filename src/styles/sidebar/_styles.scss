@@ -1,0 +1,80 @@
+@use '../susanoo';
+@use '../grid/mixins' as grid;
+@use '../helpers';
+@use 'animations';
+
+.sidebar {
+    --animation-delay: 2s;
+    --animation-name: mask;
+
+    &.is-active {
+        .japanese-text {
+            span {
+                opacity: 1;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 50%;
+                height: 0;
+                animation: var(--animation-name) 1.5s 1.25s ease-in-out;
+                z-index: 2;
+            }
+            &--left {
+                position: relative;
+               &::before {
+                   --animation-name: mask-left;
+
+                   background: {
+                       color: var(--color-tertiary);
+                   }
+               }
+            }
+            &--right {
+                position: relative;
+                &::before {
+                    --animation-name: mask-right;
+
+                    background: {
+                        color: var(--color-secondary);
+                    }
+                }
+            }
+        }
+    }
+    .japanese-text {
+        @include grid.grid-item-extend();
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &--left {
+            --column-start: 1;
+            --columns: 2;
+
+            color: var(--color-tertiary);
+        }
+        &--right {
+            --column-start: 11;
+            --columns: 2;
+
+            color: var(--color-secondary);
+        }
+        span {
+            @include helpers.steroid-text(0.04em);
+
+            font: {
+                family: "Noto Sans Japan";
+                size: susanoo.rem-calc(40);
+                weight: 900;
+            }
+            opacity: 0;
+            writing-mode: vertical-rl;
+            margin: {
+                bottom: 100vh;
+            }
+            transition: opacity 0s var(--animation-delay) linear;
+        }
+    }
+}

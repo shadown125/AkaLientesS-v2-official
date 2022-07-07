@@ -1,0 +1,14 @@
+@use '../susanoo';
+@use '../helpers';
+
+p {
+    @include helpers.steroid-text();
+    font: {
+        size: susanoo.rem-calc(20);
+    }
+    &:not(:first-child) {
+        margin: {
+            top: susanoo.rem-calc(16);
+        }
+    }
+}

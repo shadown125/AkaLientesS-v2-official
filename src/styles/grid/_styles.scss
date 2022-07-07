@@ -1,0 +1,42 @@
+@use '../susanoo';
+@use 'variables';
+@use 'mixins';
+
+html {
+    font: {
+        size: clamp(#{susanoo.rem-calc(16)}, 2vw, #{susanoo.rem-calc(22)});
+    }
+}
+
+.app {
+    --wrapper: #{susanoo.rem-calc(1440)};
+    --line-width: 2px;
+
+    position: relative;
+    font: {
+        family: variables.$font-family;
+    }
+    overflow: hidden;
+}
+
+.absolute-grid {
+    @include mixins.grid();
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    padding: {
+        top: 0;
+        bottom: 0;
+    }
+    transform: translateX(-50%);
+    width: 100%;
+    max: {
+        width: calc(var(--wrapper) + #{susanoo.rem-calc(79)});
+    }
+    z-index: -1;
+}
+
+.grid {
+    @include mixins.grid();
+}

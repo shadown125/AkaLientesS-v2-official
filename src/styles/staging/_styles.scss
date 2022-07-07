@@ -1,0 +1,256 @@
+@use '../susanoo';
+@use '../grid/mixins' as grid;
+@use '../helpers';
+@use 'animations';
+
+.staging {
+    --delay-lines: 0.6s;
+    --delay-lines-travel: 0.5s;
+
+    position: relative;
+    padding: {
+        top: 0;
+        bottom: calc(var(--padding) / var(--padding-multiply));
+    }
+    opacity: 0;
+    transition: opacity 0.75s linear;
+    @include susanoo.media(medium) {
+        padding: {
+            top: susanoo.rem-calc(50);
+        }
+    }
+    .grid {
+        min: {
+            height: 80vh;
+        }
+        align-content: center;
+        gap: susanoo.rem-calc(60) 0;
+        @include susanoo.media(large) {
+            min: {
+                height: 70vh;
+            }
+        }
+        @include susanoo.media(medium) {
+            min: {
+                height: 90vh;
+            }
+        }
+    }
+    &.is-active {
+        opacity: 1;
+        .social-links {
+            &::before {
+                @include helpers.steroid-lines();
+                height: 75%;
+            }
+        }
+        .author {
+            opacity: 1;
+        }
+        .content,
+        .letters {
+            &::before {
+                height: 100%;
+                top: 0;
+            }
+        }
+    }
+    .author {
+        @include helpers.steroid-text();
+        font: {
+            size: susanoo.rem-calc(30);
+            family: "Alex Brush", sans-serif;
+        }
+        opacity: 0;
+        transition: opacity 0.4s 1s linear;
+    }
+    .social-links {
+        @include grid.grid-item();
+        --columns: 1;
+
+        @include susanoo.media(medium) {
+            display: none;
+        }
+    }
+    .content,
+    .letters {
+        position: relative;
+        &::before,
+        &::after {
+            @include helpers.steroid-lines();
+            content: '';
+            position: absolute;
+            height: 0;
+            width: var(--line-width);
+            background: {
+                color: var(--color-primary);
+            }
+        }
+        &::before {
+            transition: top 2.25s var(--delay-lines) linear, height 2.25s var(--delay-lines) ease-in-out;
+        }
+        &::after {
+            animation: travel-line 4s var(--delay-lines-travel) ease-in-out infinite;
+        }
+    }
+    .content {
+        @include grid.grid-item-extend();
+        --column-medium: 8;
+        --columns: 4;
+        --column-start: 3;
+
+        padding: 0 susanoo.rem-calc(24);
+        .headline {
+            @include helpers.steroid-text($offset: 0.03em);
+            display: flex;
+            font: {
+                family: 'Tapestry', sans-serif;
+            }
+            flex: {
+                direction: column;
+            }
+            line-height: 1.2;
+        }
+        &::before {
+            top: -100%;
+            right: -1px;
+        }
+        &::after {
+            --delay-lines-travel: 1s;
+
+            left: calc(100% / 2);
+            @include susanoo.breakpoint(large) {
+                left: calc(100% / 2 - 3px);
+            }
+        }
+    }
+    .letters {
+        @include grid.grid-item();
+        --column-medium: 12;
+        --columns: 4;
+
+        display: flex;
+        flex: {
+            direction: column;
+        }
+        justify-content: center;
+        align-items: center;
+        font: {
+            size: susanoo.rem-calc(110);
+            family: 'Noto Sans AK', sans-serif;
+        }
+        @include susanoo.media(large) {
+            flex: {
+                direction: row;
+            }
+            &::before {
+                right: unset;
+                left: calc(17.25% - 4px);
+            }
+            &::after {
+                content: unset;
+            }
+        }
+        @include susanoo.media(small) {
+            &::before {
+                left: calc(17.25% - 2px);
+            }
+        }
+        &::before {
+            @include helpers.steroid-lines();
+            top: -100%;
+            right: -1px;
+            transition: top 1.5s calc(var(--delay-lines) / 3) linear, height 1.5s calc(var(--delay-lines) / 3) ease-in-out;
+        }
+        &::after {
+            height: 0;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            @include susanoo.breakpoint(large) {
+                left: calc(50% - 2px);
+            }
+        }
+        &.is-active {
+            > span {
+                color: var(--color, var(--color-tertiary));
+                filter: brightness(200%);
+                &::before {
+                    filter: blur(20px);
+                }
+                &:nth-child(1) {
+                    --blinking-animation-duration: 2.5s;
+
+                    animation: blinking-letter var(--blinking-animation-duration) linear;
+                    &::before {
+                        animation: blinking-letter-before var(--blinking-animation-duration) linear;
+                    }
+                }
+                &:nth-child(3) {
+                    --letter-animation-delay: 1.5s;
+                }
+                &:nth-child(4) {
+                    --letter-animation-delay: 2s;
+                }
+                &:nth-child(5) {
+                    --letter-animation-delay: 3s;
+                }
+            }
+        }
+        > span {
+            --letter-animation-delay: 1s;
+
+            display: block;
+            position: relative;
+            color: grey;
+            filter: unset;
+            line-height: 1.2;
+            transition: color 0.1s var(--letter-animation-delay) linear, filter 0.1s var(--letter-animation-delay) linear;
+            &:not(:first-child) {
+                margin: {
+                    top: susanoo.rem-calc(-30)
+                }
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                mix-blend-mode: difference;
+                top: 0;
+                left: 0;
+                filter: unset;
+                transition: filter 0.25s var(--letter-animation-delay) linear;
+            }
+            &:nth-child(1) {
+                --color: var(--color-secondary);
+
+                &::before {
+                    content: 'Y';
+                }
+            }
+            &:nth-child(2) {
+                &::before {
+                    content: 'O';
+                }
+            }
+            &:nth-child(3) {
+                --color: var(--color-secondary);
+
+                &::before {
+                    content: 'L';
+                }
+            }
+            &:nth-child(4) {
+                --color: var(--color-secondary);
+
+                &::before {
+                    content: 'O';
+                }
+            }
+            &:nth-child(5) {
+                &::before {
+                    content: 'N';
+                }
+            }
+        }
+    }
+}

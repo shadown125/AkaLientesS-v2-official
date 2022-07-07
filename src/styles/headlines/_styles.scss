@@ -1,0 +1,73 @@
+@use "../susanoo";
+@use "../helpers";
+@use "variables";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font: {
+        size: unset;
+        weight: normal;
+    }
+    transition: color 0.2s linear;
+}
+
+.headline {
+    color: var(--color-headline, white);
+    &:not(:first-child) {
+        margin: {
+            top: susanoo.rem-calc(16);
+        }
+    }
+    margin: {
+        bottom: susanoo.rem-calc(24);
+    }
+}
+
+.title {
+    &::before {
+        background: {
+            image: linear-gradient(0.30turn, rgb(255 0 0), rgb(0 255 255));
+        }
+        box: {
+            shadow: -0.05em 0 15px var(--color-tertiary), 0.05em 0 15px var(--color-secondary);
+        }
+    }
+    > span {
+        @include helpers.steroid-text();
+        color: white;
+    }
+}
+
+.h1 {
+    font: {
+        size: clamp(#{susanoo.rem-calc(map-get(variables.$headline-min-sizes, "h1"))}, 6vw, #{susanoo.rem-calc(map-get(variables.$headline-max-sizes, "h1"))});
+    }
+}
+
+.h2 {
+    font: {
+        size: clamp(#{susanoo.rem-calc(map-get(variables.$headline-min-sizes, "h2"))}, 7vw, #{susanoo.rem-calc(map-get(variables.$headline-max-sizes, "h2"))});
+    }
+}
+
+.h3 {
+    font: {
+        size: clamp(#{susanoo.rem-calc(map-get(variables.$headline-min-sizes, "h3"))}, 6vw, #{susanoo.rem-calc(map-get(variables.$headline-max-sizes, "h3"))});
+    }
+}
+
+.h4 {
+    font: {
+        size: clamp(#{susanoo.rem-calc(map-get(variables.$headline-min-sizes, "h4"))}, 5vw, #{susanoo.rem-calc(map-get(variables.$headline-max-sizes, "h4"))});
+    }
+}
+
+.h5 {
+    font: {
+        size: clamp(#{susanoo.rem-calc(map-get(variables.$headline-min-sizes, "h5"))}, 4vw, #{susanoo.rem-calc(map-get(variables.$headline-max-sizes, "h5"))});
+    }
+}

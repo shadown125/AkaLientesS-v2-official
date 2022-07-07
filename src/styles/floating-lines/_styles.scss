@@ -1,0 +1,62 @@
+@use '../susanoo';
+@use '../grid/mixins' as grid;
+
+.floating-lines {
+    --line-color: #3d3d3d;
+    --line-animation-delay: 0s;
+
+    &.is-active {
+        div {
+            height: 100%;
+        }
+    }
+    div {
+        @include grid.grid-item-extend();
+        height: 0;
+        border: {
+            right: {
+                color: var(--line-color);
+                style: solid;
+                width: 2px
+            }
+        }
+        transition: height var(--floating-lines-animation-time) var(--line-animation-delay) linear;
+        @include susanoo.media(medium) {
+            &:nth-child(1),
+            &:nth-child(3) {
+                @include susanoo.media(medium) {
+                    border: {
+                        right: unset;
+                    }
+                }
+            }
+        }
+        &:nth-child(1) {
+            --columns: 2;
+            --column-start: 3;
+
+            border: {
+                left: {
+                    color: var(--line-color);
+                    style: solid;
+                    width: 2px
+                }
+            }
+        }
+        &:nth-child(2) {
+            --columns: 2;
+            --column-start: 5;
+            --line-animation-delay: 1s;
+        }
+        &:nth-child(3) {
+            --columns: 2;
+            --column-start: 7;
+            --line-animation-delay: 0.4s;
+        }
+        &:nth-child(4) {
+            --columns: 2;
+            --column-start: 9;
+            --line-animation-delay: 0.7s;
+        }
+    }
+}

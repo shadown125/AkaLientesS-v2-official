@@ -1,0 +1,8 @@
+header {
+    &.section {
+        padding: {
+            top: 0;
+            bottom: calc(var(--padding) / var(--padding-multiply));
+        }
+    }
+}

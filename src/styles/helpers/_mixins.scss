@@ -1,0 +1,11 @@
+@mixin steroid-text($offset: 0.05em) {
+    text: {
+        shadow: -$offset 0 1px var(--color-tertiary), $offset 0 1px var(--color-secondary);
+    }
+}
+
+@mixin steroid-lines() {
+    box: {
+        shadow: -0.01em 0 2px var(--color-tertiary), 0.01em 0 2px var(--color-secondary);
+    }
+}

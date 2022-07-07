@@ -1,0 +1,86 @@
+@use '../susanoo';
+@use '../lists';
+@use '../helpers';
+@use 'animations';
+
+.social-links {
+    --animation-duration: 0.55s;
+    --loaded-animation: 0.65s;
+
+    @include lists.reset-list();
+    display: flex;
+    position: relative;
+    flex: {
+        direction: column;
+    }
+    gap: susanoo.rem-calc(32);
+    z-index: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        top: susanoo.rem-calc(-20);
+        right: calc(-100% - 3px);
+        height: 0;
+        width: var(--line-width);
+        background: {
+            color: var(--color-primary);
+        }
+        transition: height 2s calc(var(--animation-duration) + var(--loaded-animation)) ease-in-out;
+    }
+    &.is-active {
+        li {
+            &::before {
+                width: 0;
+            }
+        }
+        .icon {
+            &::before {
+                @include helpers.steroid-text();
+                opacity: 1;
+            }
+        }
+        .github {
+            &::after {
+                animation: blink 4s linear infinite;
+            }
+        }
+    }
+    li {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background: {
+                color: var(--color-primary);
+            }
+            animation: mask calc(var(--loaded-animation) * 2) calc(var(--animation-duration) + 2.5s) ease-in-out;
+            z-index: 2;
+        }
+        &:nth-child(even) {
+            a {
+                &:hover {
+                    &::after {
+                        box-shadow: 0 0 #{susanoo.rem-calc(60)} #{susanoo.rem-calc(14)} var(--color-secondary);
+                    }
+                }
+            }
+        }
+    }
+    .icon {
+        &::before {
+            color: white;
+            opacity: 0;
+            transition: opacity 0.25s calc(var(--animation-duration) + var(--loaded-animation)) linear;
+        }
+    }
+    .github {
+        &:hover {
+            &::after {
+                animation: unset;
+            }
+        }
+    }
+}
