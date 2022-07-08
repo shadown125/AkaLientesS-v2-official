@@ -2,7 +2,9 @@ import {useInView} from "react-intersection-observer";
 import SkillsFrameworksItem from "./SkillsFrameworksItem";
 
 const SkillsFrameworks = () => {
-    const { ref, inView } = useInView();
+    const { ref, inView } = useInView({
+        triggerOnce: true
+    });
 
     return (
         <div ref={ref} className={`frameworks${ inView ? ' is-active' : ''}`}>
