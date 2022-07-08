@@ -121,7 +121,9 @@
             .headline,
             span {
                 &:not(.counter) {
-                    transform: scale(1.1);
+                    &:not(.counter + span) {
+                        transform: scale(1.1);
+                    }
                 }
             }
             .counter {
