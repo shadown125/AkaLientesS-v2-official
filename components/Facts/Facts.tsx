@@ -3,7 +3,9 @@ import {facts} from "../../content/FactsData";
 import FactsItem from './FactsItem';
 
 const Facts = () => {
-    const { ref, inView } = useInView();
+    const { ref, inView } = useInView({
+        triggerOnce: true
+    });
 
     return (
          <section ref={ref} id="facts" className={`facts${inView ? ' loaded is-active' : ''}`}>
