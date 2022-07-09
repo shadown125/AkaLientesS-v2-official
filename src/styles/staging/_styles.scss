@@ -43,6 +43,11 @@
                 @include helpers.steroid-lines();
                 height: 75%;
             }
+            li {
+                &::before {
+                    content: unset;
+                }
+            }
         }
         .author {
             opacity: 1;

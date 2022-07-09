@@ -1,11 +1,9 @@
 import {socialList} from '../content/SocialLinksData'
-import {useInView} from "react-intersection-observer";
 
-const SocialLinks = () => {
-    const { ref, inView } = useInView();
+const SocialLinks = (props: {active: string}) => {
 
     return (
-        <ul ref={ref} className={`social-links${inView ? ' is-active' : ''}`}>
+        <ul className={`social-links${props.active}`}>
             {socialList.map((link, index) => (
                 <li key={index}>
                     <a href={link.link} rel="external noopener noreferrer" target="_blank" className={`icon ${link.name}`}>

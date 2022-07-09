@@ -11,7 +11,7 @@ const Footer = () => {
                     <p className="credits">
                         &copy; { new Date().getFullYear() } All rights reserved by Dawid Oleksiuk
                     </p>
-                    <SocialLinks />
+                    <SocialLinks active={inView ? ' is-active' : ''} />
                 </div>
             </div>
         </footer>
