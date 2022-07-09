@@ -1,6 +1,8 @@
 @use 'animations';
 
 @mixin mask($delay: 0s) {
+    --delay: #{$delay};
+
     &::before {
         content: '';
         position: absolute;
@@ -10,10 +12,11 @@
         background: {
             color: var(--color-mask, var(--color-primary));
         }
-        animation: mask 1s $delay linear;
+        animation: mask 1s var(--delay) linear;
+        z-index: 2;
     }
     > span {
         opacity: 1;
-        transition: opacity 0s calc(0.5s + #{$delay}) linear;
+        transition: opacity 0.01s calc(0.5s + var(--delay)) linear;
     }
 }
