@@ -6,10 +6,12 @@ import Skills from "../components/Skills/Skills";
 import MyWork from "../components/MyWork/MyWork";
 import Navigation from "../components/core/Navigation";
 import Staging from "../components/Staging/Staging";
+import TsParticles from "../components/core/TsParticles";
 
 const Home: NextPage = () => {
   return (
    <>
+       <TsParticles />
        <Navigation />
        <Staging />
        <Facts />
