@@ -1,4 +1,4 @@
-# AkaLientess v2 - official
+# AkaLientesS v2 - official
 
 Hello, :)
 
