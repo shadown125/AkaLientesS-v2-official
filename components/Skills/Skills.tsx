@@ -9,14 +9,14 @@ const Skills = () => {
     });
 
     return (
-        <section  id="skills" className={`skills${inView ? ' is-active' : ''}`}>
+        <section ref={ref} id="skills" className={`skills${inView ? ' is-active' : ''}`}>
             <div className="wrapper">
                 <h2 className="title title--skills h2">
                     <span>Skills</span>
                 </h2>
                 <ul className="skills-list">
                     {skills.map((item, index) => (
-                        <li ref={ref} key={index} className={`skill${inView ? ' is-active' : ''}`}>
+                        <li key={index} className={`skill${inView ? ' is-active' : ''}`}>
                             <SkillsItem name={item.name} points={item.points} keys={item.keys} />
                         </li>
                     ))}
