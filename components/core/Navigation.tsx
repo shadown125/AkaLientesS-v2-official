@@ -34,7 +34,7 @@ const Navigation = () => {
                 <nav ref={ref} className={`main-navigation${inView ? ' is-active' : ''}${windowTop ? '' : ' is-loaded'}`}>
                     <Link href="/">
                         <a>
-                            <Image width={80} height={80} src='/brandLogo.png' alt='brand-logo' />
+                            <Image layout="fixed" width={80} height={80} src='/brandLogo.png' alt='brand-logo' />
                         </a>
                     </Link>
                     <ul>
