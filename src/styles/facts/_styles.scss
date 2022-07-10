@@ -196,6 +196,9 @@
             height: 100%;
             object-fit: cover;
             transition: opacity 1s 0.65s ease-in-out;
+            @include susanoo.media(medium) {
+                position: fixed;
+            }
         }
         .image-plane {
             position: absolute;
