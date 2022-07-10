@@ -3,6 +3,8 @@ import {useInView} from "react-intersection-observer";
 import FactsItemKeys from "./FactsItemKeys";
 import FactsCurtain from "./FactsCurtain";
 import {useEffect, useState} from "react";
+import {useMediaQuery} from "react-responsive";
+import Image from "next/image";
 
 const FactsItem = (props: props) => {
     const { ref, inView } = useInView({
@@ -19,6 +21,11 @@ const FactsItem = (props: props) => {
         <div ref={ref} className={`grid${inView ? ' is-active' : ''}`}>
             <div className="image">
                 {clientSideShow && <FactsCurtain image={props.image} headline={props.headline} />}
+                {/*{clientSideShow && !isTabletOrMobile ? (*/}
+                {/*    <FactsCurtain image={props.image} headline={props.headline} />*/}
+                {/*) : (*/}
+                {/*    <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} />*/}
+                {/*)}*/}
                 <h3 className="headline h3">
                     <span>{ props.headline }</span>
                 </h3>

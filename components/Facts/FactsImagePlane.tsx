@@ -4,24 +4,16 @@ import { Plane, useCurtains } from "react-curtains";
 // @ts-ignore
 import { Vec2 } from "curtainsjs/src";
 import {vs, fs } from "../../Shaders/ShadersData";
+import {useMediaQuery} from "react-responsive";
+import Image from "next/image";
 
-import { useMediaQuery } from 'react-responsive'
-
-const FactsImagePlane = ({children}: {children: JSX.Element[] | JSX.Element}) => {
-    const isTabletOrMobile = useMediaQuery({query: '(max-width: 50em)'})
+const FactsImagePlane = (props: {children: JSX.Element[] | JSX.Element, image: string, headline: string}) => {
     const [plane, setPlane] = useState(null);
-    const [enableScroll, setEnableScroll] = useState<boolean>(false)
+
+    const isTabletOrMobile = useMediaQuery({query: '(max-width: 50em)'})
 
     const mousePosition = useRef(new Vec2());
     const mouseLastPosition = useRef(new Vec2());
-
-    useEffect(() => {
-        if (isTabletOrMobile) {
-            setEnableScroll(true)
-        } else {
-            setEnableScroll(false)
-        }
-    }, [isTabletOrMobile, setEnableScroll])
 
     const deltas = useRef({
         max: 0,
@@ -136,20 +128,26 @@ const FactsImagePlane = ({children}: {children: JSX.Element[] | JSX.Element}) =>
     };
 
     return (
-        <Plane
-            className="image-plane"
-            vertexShader={vs}
-            fragmentShader={fs}
-            widthSegments={20}
-            heightSegments={20}
-            uniforms={uniforms}
-            onReady={onReady}
-            onRender={onRender}
-            onAfterResize={onAfterResize}
-            watchScroll={enableScroll}
-        >
-            {children}
-        </Plane>
+        <>
+            {!isTabletOrMobile ? (
+                <Plane
+                    className="image-plane"
+                    vertexShader={vs}
+                    fragmentShader={fs}
+                    widthSegments={20}
+                    heightSegments={20}
+                    uniforms={uniforms}
+                    onReady={onReady}
+                    onRender={onRender}
+                    onAfterResize={onAfterResize}
+                    watchScroll={false}
+                >
+                    {props.children}
+                </Plane>
+            ) : (
+                <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} data-sampler="imagePlaneTexture" />
+            )}
+        </>
     );
 }
 

@@ -8,8 +8,8 @@ const FactsCurtain = (props: {
     headline: string
 }) => {
     return (
-        <Curtains >
-            <FactsImagePlane>
+        <Curtains production={true}>
+            <FactsImagePlane image={props.image} headline={props.headline}>
                 <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} data-sampler="imagePlaneTexture" />
             </FactsImagePlane>
         </Curtains>
