@@ -8,6 +8,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 The Website can be found under: https://www.akalientess.com/
 
+The Vue.js (with nuxt.js hybrid Framework) is available under: [`Vue-AkaLientesS-v2`](https://github.com/shadown125/AkaLientesS-v2)
+
+The First version of my Portfolio website build with Hugo and native JS can be found under: [`AkaLientesS`](https://github.com/shadown125/Akalientess)
+
 ## Getting Started
 
 First, run the development server:
@@ -37,7 +41,7 @@ For Production, you need to run the build script for styles:
 npm run style:build
 ```
 
-<h3 style="color:orange;">Note!! This Website is in build progress which does not reflect the final state. The current state of the Website is in Alpha (0.5.0v)</h3>
+<h3 style="color:orange;">Note!! This Website is in build progress which does not reflect the final state. The current state of the Website is in Alpha (0.6.0v)</h3>
 
 
 ## Learn More
