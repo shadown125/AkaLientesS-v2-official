@@ -25,7 +25,6 @@ const defaults = {
 class Baffle {
 
     constructor(elements, options) {
-        console.log(options);
         this.options  = extend(Object.create(defaults), options);
         this.elements = getElements(elements).map(Obfuscator);
         this.running  = false;
