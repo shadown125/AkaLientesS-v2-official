@@ -1,13 +1,17 @@
 import {useInView} from "react-intersection-observer";
 import {textLeft, textRight} from "../../content/SidebarLettersData";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
+import {InitialLoadContext} from "../context/initialLoadContext";
 
 const SidebarLetters = () => {
+    const {loadState} = useContext(InitialLoadContext)
     const { ref, inView } = useInView({
         triggerOnce: true
     });
     const [windowTop, setWindowTop] = useState<number>(0)
     const transformOffset = 125
+
+    const active = () => inView && loadState
 
     useEffect(() => {
         const onScroll = () => setWindowTop(window!.top!.scrollY * 0.7)
@@ -18,7 +22,7 @@ const SidebarLetters = () => {
     })
 
     return (
-        <div ref={ref} className={`section absolute-grid sidebar${inView ? ' is-active' : ''}`}>
+        <div ref={ref} className={`section absolute-grid sidebar${active() ? ' is-active' : ''}`}>
             <div className="japanese-text japanese-text--left">
                 {textLeft.map((item, index) => (
                     <span key={index} style={{ transform: `translateY(${windowTop * -1 - transformOffset}px)` }}>{ item.name }</span>

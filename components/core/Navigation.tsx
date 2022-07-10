@@ -1,16 +1,21 @@
 import {useInView} from "react-intersection-observer";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import Link from "next/link";
 import {links} from "../../content/NavigationData";
 import Image from "next/image";
+import {InitialLoadContext} from "../context/initialLoadContext";
 
 const Navigation = () => {
+    const {loadState} = useContext(InitialLoadContext)
     const { ref, inView } = useInView({
         delay: 1000,
         triggerOnce: true
     });
     const [windowTop, setWindowTop] = useState<number>(0)
     const [menu, setMenu] = useState<string>('')
+    const [delayedActive, setDelayedActive] = useState<boolean>(false)
+
+    const active = () => inView && delayedActive
 
     const openAndCloseMenu = () => {
         if (!menu) {
@@ -21,17 +26,28 @@ const Navigation = () => {
     }
 
     useEffect(() => {
+        const animationDelay = 2000
+
+        const delayActiveAnimation = setTimeout(() => {
+            if (loadState) {
+                setDelayedActive(loadState)
+            }
+        }, animationDelay)
+
         const onScroll = () => setWindowTop(window!.top!.scrollY)
 
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
-    })
+        return () => {
+            clearTimeout(delayActiveAnimation)
+            window.removeEventListener('scroll', onScroll);
+        }
+    }, [loadState])
 
     return (
         <header className="section">
             <div className="wrapper">
-                <nav ref={ref} className={`main-navigation${inView ? ' is-active' : ''}${windowTop ? '' : ' is-loaded'}`}>
+                <nav ref={ref} className={`main-navigation${active() ? ' is-active' : ''}${windowTop === 0 && active() ? ' is-loaded' : ''}`}>
                     <Link href="/">
                         <a>
                             <Image layout="fixed" width={80} height={80} src='/brandLogo.png' alt='brand-logo' />

@@ -7,10 +7,12 @@ import MyWork from "../components/MyWork/MyWork";
 import Navigation from "../components/core/Navigation";
 import Staging from "../components/Staging/Staging";
 import TsParticles from "../components/core/TsParticles";
+import InitialPageLoader from "../components/core/InitialPageLoader";
 
 const Home: NextPage = () => {
   return (
    <>
+       <InitialPageLoader />
        <TsParticles />
        <Navigation />
        <Staging />

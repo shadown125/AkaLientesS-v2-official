@@ -1,7 +1,11 @@
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import {InitialLoadContext} from "../context/initialLoadContext";
+import {useContext} from "react";
 
 const TsParticles = () => {
+    const {loadState} = useContext(InitialLoadContext)
+
     const options = {
         interactivity: {
             events: {
@@ -47,7 +51,7 @@ const TsParticles = () => {
     }
 
     return (
-        <Particles id="tsparticles" init={loadFull} options={options} />
+        <Particles id="tsparticles" className={`particle${loadState ? ' is-active' : ''}`} init={loadFull} options={options} />
     )
 }
 
