@@ -15,7 +15,7 @@ const MyWorkItem = (props: props) => {
         <div ref={ref} className={`container${ inView ? ' is-active' : ''}`}>
             <a href={props.link} target='_blank' rel="external noopener noreferrer">
                 <span className="counter" data-text={getCurrentCounter(props.index)}>{ getCurrentCounter(props.index) }</span>
-                <Image layout="fill" src={props.image} alt={props.name} />
+                <Image priority={true} layout="fill" src={props.image} alt={props.name} />
                 <div className="key-headline">
                     <h3 className="headline h3">{ props.name }</h3>
                     <span>{ props.description }</span>

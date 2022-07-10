@@ -12,7 +12,7 @@ const FactsItem = (props: props) => {
     return (
         <div ref={ref} className={`grid${inView ? ' is-active' : ''}`}>
             <div className="image">
-                <Image layout={"fill"} src={props.image} alt={props.headline} />
+                <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} />
                 <h3 className="headline h3">
                     <span>{ props.headline }</span>
                 </h3>
