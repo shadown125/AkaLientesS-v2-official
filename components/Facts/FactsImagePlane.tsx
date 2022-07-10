@@ -1,15 +1,27 @@
-import { useRef, useState } from "react";
+import {useEffect, useRef, useState} from "react";
 // @ts-ignore
 import { Plane, useCurtains } from "react-curtains";
 // @ts-ignore
 import { Vec2 } from "curtainsjs/src";
 import {vs, fs } from "../../Shaders/ShadersData";
 
+import { useMediaQuery } from 'react-responsive'
+
 const FactsImagePlane = ({children}: {children: JSX.Element[] | JSX.Element}) => {
+    const isTabletOrMobile = useMediaQuery({query: '(max-width: 50em)'})
     const [plane, setPlane] = useState(null);
+    const [enableScroll, setEnableScroll] = useState<boolean>(false)
 
     const mousePosition = useRef(new Vec2());
     const mouseLastPosition = useRef(new Vec2());
+
+    useEffect(() => {
+        if (isTabletOrMobile) {
+            setEnableScroll(true)
+        } else {
+            setEnableScroll(false)
+        }
+    }, [isTabletOrMobile, setEnableScroll])
 
     const deltas = useRef({
         max: 0,
@@ -134,7 +146,7 @@ const FactsImagePlane = ({children}: {children: JSX.Element[] | JSX.Element}) =>
             onReady={onReady}
             onRender={onRender}
             onAfterResize={onAfterResize}
-            watchScroll={false}
+            watchScroll={enableScroll}
         >
             {children}
         </Plane>
