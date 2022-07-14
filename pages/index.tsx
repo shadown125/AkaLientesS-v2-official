@@ -8,10 +8,19 @@ import Navigation from "../components/core/Navigation";
 import Staging from "../components/Staging/Staging";
 import TsParticles from "../components/core/TsParticles";
 import InitialPageLoader from "../components/core/InitialPageLoader";
+import MouseTrailer from "../vanilla-js/MouseTrailer";
+import {useEffect} from "react";
 
 const Home: NextPage = () => {
+    useEffect(() => {
+        const mouseTrailerCanvas = document.getElementById('mouse-trailer') as HTMLCanvasElement
+
+        MouseTrailer(mouseTrailerCanvas)
+    })
+
   return (
    <>
+       <canvas id='mouse-trailer' />
        <InitialPageLoader />
        <TsParticles />
        <Navigation />
