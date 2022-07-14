@@ -3,7 +3,7 @@ import {useEffect, useRef, useState} from "react";
 import { Plane, useCurtains } from "react-curtains";
 // @ts-ignore
 import { Vec2 } from "curtainsjs/src";
-import {vs, fs } from "../../Shaders/ShadersData";
+import {vs, fs } from "../../shaders/ShadersData";
 import {useMediaQuery} from "react-responsive";
 import Image from "next/image";
 
