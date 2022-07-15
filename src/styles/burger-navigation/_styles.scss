@@ -7,7 +7,7 @@
 .burger-navigation {
     --content-duration: 0.25s;
     --content-delay: 0.125s;
-    --core-delay: 0.9s;
+    --core-delay: 1.5s;
 
     position: fixed;
     bottom: 100%;
@@ -191,44 +191,34 @@
         height: 100%;
         left: 50%;
         transform: translateX(-50%);
-        &::before,
-        &::after {
+        &::before {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
             left: 200%;
             transform: translateX(-50%);
-        }
-        &::before {
-            background: {
-                color: var(--color-primary);
+            backdrop-filter: blur(10px);
+            border: {
+                bottom-left-radius: susanoo.rem-calc(400);
+                top-left-radius: susanoo.rem-calc(400);
             }
-            transition: left 1s 0.25s ease-in-out;
+            transition: left var(--core-delay) 0.25s ease-in-out, border-radius 2s ease-in-out;
             z-index: 2;
         }
-        &::after {
-            background: {
-                image: linear-gradient(to top, #16151c, #09090b);
-            }
-            transition: left 1s ease-in-out;
-            z-index: 3;
-        }
         &.is-active {
-            &::before,
-            &::after {
-                left: 50%;
-            }
             &::before {
-                transition: left 1s ease-in-out;
-            }
-            &::after {
-                transition: left 0.75s 0.25s ease-in-out;
+                left: 50%;
+                border: {
+                    bottom-left-radius: 0;
+                    top-left-radius: 0;
+                }
+                transition: left var(--core-delay) ease-in-out, border-radius 1.5s ease-in-out;
             }
             .content {
                 opacity: 1;
                 transform: translateX(0);
-                transition: transform 0s 0.9s, opacity 0s 1s linear;
+                transition: transform 0s 0.9s;
             }
             a {
                 > span {
@@ -236,7 +226,7 @@
                     &::after {
                         opacity: 1;
                         top: 0;
-                        transition: color var(--content-duration) var(--content-delay) linear, transform var(--content-duration) var(--content-delay) linear, top 0.3s 1s linear, opacity 0s var(--core-delay) linear;
+                        transition: color var(--content-duration) var(--content-delay) linear, transform var(--content-duration) var(--content-delay) linear, top 0.3s 1s linear;
                     }
                 }
             }
