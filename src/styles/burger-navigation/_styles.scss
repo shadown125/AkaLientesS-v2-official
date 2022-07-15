@@ -202,11 +202,15 @@
             border: {
                 radius: susanoo.rem-calc(40);
                 style: solid;
-                width: 2px;
+                width: 0.2px;
                 color: var(--color-tertiary);
             }
             transition: transform var(--core-delay);
             z-index: 2;
+            @media only screen and (max-width: 640px) {
+                top: calc((var(--padding) * var(--padding-multiply)) - #{susanoo.rem-calc(8)});
+                right: calc(var(--padding) - #{susanoo.rem-calc(8)});
+            }
         }
         &.is-active {
             &::before {
