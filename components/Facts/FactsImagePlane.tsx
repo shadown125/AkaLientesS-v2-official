@@ -145,7 +145,7 @@ const FactsImagePlane = (props: {children: JSX.Element[] | JSX.Element, image: s
                     {props.children}
                 </Plane>
             ) : (
-                <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} data-sampler="imagePlaneTexture" />
+                <Image layout={"fill"} src={props.image} alt={props.headline} data-sampler="imagePlaneTexture" />
             )}
         </>
     );
