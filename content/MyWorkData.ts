@@ -9,7 +9,7 @@ export const projects = [
     {
         name: 'Susanoo CMS',
         description: 'The most ambitious Project',
-        link: 'https://github.com/shadown125/susanoo',
+        link: 'https://github.com/shadown125/SuSanoo',
         image: '/susanoo.png',
         content: 'I really wanted to create something big. Something, I can develop over years.'
     }
