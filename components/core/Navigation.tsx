@@ -66,9 +66,11 @@ const Navigation = () => {
                             </li>
                         ))}
                     </ul>
-                    <a href="mailto:dawidoleksiuk7@gmail.com" className='button'>
-                        <span>Contact me</span>
-                    </a>
+                    <Link href="#contact">
+                        <a className='button'>
+                            <span>Contact me</span>
+                        </a>
+                    </Link>
                 </nav>
                 <nav className={`section absolute-grid burger-navigation${windowTop !== 0 ? ' is-visible' : ''}${menu}`}>
                     <button className={`menu${menu}`} onClick={openAndCloseMenu}>
