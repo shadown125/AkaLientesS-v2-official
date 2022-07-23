@@ -4,6 +4,7 @@
     position: relative;
     &.is-invalid {
         &::before {
+            width: 100%;
             background: {
                 color: var(--color-tertiary);
             }
