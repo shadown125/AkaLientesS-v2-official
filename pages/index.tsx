@@ -6,6 +6,7 @@ import Skills from "../components/Skills/Skills";
 import MyWork from "../components/MyWork/MyWork";
 import Navigation from "../components/core/Navigation";
 import Staging from "../components/Staging/Staging";
+import Contact from "../components/contact/Contact";
 import TsParticles from "../components/core/TsParticles";
 import InitialPageLoader from "../components/core/InitialPageLoader";
 import MouseTrailer from "../vanilla-js/MouseTrailer";
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
        <Facts />
        <Skills />
        <MyWork />
+       <Contact />
        <SidebarLetters />
        <FloatingLines />
    </>
