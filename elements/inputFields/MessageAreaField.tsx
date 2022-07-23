@@ -7,7 +7,7 @@ const MessageAreaField = (props: {name: string}) => {
     if (errorText) {
         return (
             <div className="input is-invalid">
-                <textarea placeholder="Message" {...field} />
+                <textarea placeholder="Message*" {...field} />
                 <div className="error-message">{errorText}</div>
             </div>
         )
@@ -15,7 +15,7 @@ const MessageAreaField = (props: {name: string}) => {
 
     return (
         <div className="input">
-            <textarea placeholder="Message" {...field} />
+            <textarea placeholder="Message*" {...field} />
         </div>
     )
 }
