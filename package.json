@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@tanem/react-nprogress": "^5.0.7",
+    "axios": "^0.27.2",
     "curtainsjs": "^8.1.3",
     "formik": "^2.2.9",
     "next": "12.2.0",
