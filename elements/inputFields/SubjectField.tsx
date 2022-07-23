@@ -6,10 +6,12 @@ const SubjectField = (props: {name: string}) => {
 
     if (errorText) {
         return (
-            <div className="input is-invalid">
-                <input type="text" className="is-invalid" placeholder="Subject*" {...field} />
+            <>
+                <div className="input is-invalid">
+                    <input type="text" className="is-invalid" placeholder="Subject*" {...field} />
+                </div>
                 <div className="error-message">{errorText}</div>
-            </div>
+            </>
         )
     }
 

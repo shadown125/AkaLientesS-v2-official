@@ -6,10 +6,12 @@ const EmailField = (props: {name: string}) => {
 
     if (errorText) {
         return (
-            <div className="input is-invalid">
-                <input type="email" placeholder="E-Mail*" {...field} />
+            <>
+                <div className="input is-invalid">
+                    <input type="email" placeholder="E-Mail*" {...field} />
+                </div>
                 <div className="error-message">{errorText}</div>
-            </div>
+            </>
         )
     }
 
