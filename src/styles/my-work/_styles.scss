@@ -117,6 +117,11 @@
                 bottom: susanoo.rem-calc(30);
             }
         }
+        @include susanoo.media(medium) {
+            min: {
+                height: susanoo.rem-calc(400);
+            }
+        }
         &:hover {
             .headline,
             span {
