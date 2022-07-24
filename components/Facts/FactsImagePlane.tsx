@@ -142,7 +142,7 @@ const FactsImagePlane = (props: {image: string, headline: string}) => {
                     onAfterResize={onAfterResize}
                     watchScroll={false}
                 >
-                    <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} data-sampler="imagePlaneTexture" />
+                    <img src={props.image} alt={props.headline} data-sampler="imagePlaneTexture" />
                 </Plane>
             ) : (
                 <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} />
