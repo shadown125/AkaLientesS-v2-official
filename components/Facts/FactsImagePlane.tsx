@@ -7,7 +7,7 @@ import {vs, fs } from "../../shaders/ShadersData";
 import {useMediaQuery} from "react-responsive";
 import Image from "next/image";
 
-const FactsImagePlane = (props: {children: JSX.Element[] | JSX.Element, image: string, headline: string}) => {
+const FactsImagePlane = (props: {image: string, headline: string}) => {
     const [plane, setPlane] = useState(null);
 
     const isTabletOrMobile = useMediaQuery({query: '(max-width: 50em)'})
@@ -142,10 +142,10 @@ const FactsImagePlane = (props: {children: JSX.Element[] | JSX.Element, image: s
                     onAfterResize={onAfterResize}
                     watchScroll={false}
                 >
-                    {props.children}
+                    <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} data-sampler="imagePlaneTexture" />
                 </Plane>
             ) : (
-                <Image layout={"fill"} src={props.image} alt={props.headline} data-sampler="imagePlaneTexture" />
+                <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} />
             )}
         </>
     );
