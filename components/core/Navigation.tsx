@@ -102,6 +102,13 @@ const Navigation = () => {
                                         </Link>
                                     </li>
                                 ))}
+                                <li onClick={openAndCloseMenu}>
+                                    <Link href="#contact">
+                                        <a>
+                                            <span data-text="CONTACT">CONTACT</span>
+                                        </a>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
