@@ -1,6 +1,12 @@
 # AkaLientesS v2 - official
 
-Hello, :)
+:warning: Browser support: :warning:
+
+Please consider to use following web browser for best experience: <b>Chrome</b>, <b>Safari</b>, <b>Opera</b>
+
+:warning: Please do <b>NOT USE</b> Firefox until version 1.0 :bangbang:
+
+---
 
 Welcome to AkaLientesS Project which is my Portfolio Website
 
