@@ -191,7 +191,6 @@ class MouseTrailerModule {
             this.target.x = event.clientX
             this.target.y = event.clientY;
         }
-        event.preventDefault();
     }
 
     private touchstart (event: any) {
