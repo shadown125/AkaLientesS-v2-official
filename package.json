@@ -19,7 +19,7 @@
     "postcss:watch": "postcss src/build/*.css --watch --dir public"
   },
   "dependencies": {
-    "@tanem/react-nprogress": "^5.0.7",
+    "@tanem/react-nprogress": "^5.0.8",
     "axios": "^0.27.2",
     "curtainsjs": "^8.1.3",
     "formik": "^2.2.9",
@@ -27,7 +27,7 @@
     "react": "18.2.0",
     "react-curtains": "^1.0.10",
     "react-dom": "18.2.0",
-    "react-intersection-observer": "^9.3.5",
+    "react-intersection-observer": "^9.4.0",
     "react-responsive": "^9.0.0-beta.10",
     "react-tsparticles": "^2.1.3",
     "sharp": "^0.30.7",
@@ -50,7 +50,7 @@
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "postcss-csso": "^6.0.0",
-    "sass": "^1.52.3",
+    "sass": "^1.54.0",
     "svgo": "^2.8.0",
     "typescript": "4.7.4"
   }
