@@ -12,7 +12,7 @@ const InitialPageLoader = () => {
 
     useEffect(() => {
         const body = document!.querySelector('body');
-        const delay = 3500
+        const delay = Math.floor(Math.random() * 3000) + 750
 
         if (body!.style.overflow != 'unset') {
             body!.style.overflow = 'hidden'
