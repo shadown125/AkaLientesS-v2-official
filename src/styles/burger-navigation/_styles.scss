@@ -214,7 +214,7 @@
         }
         &.is-active {
             &::before {
-                transform: scale(180);
+                transform: scale(100);
                 transition: transform var(--core-delay);
             }
             .content {
