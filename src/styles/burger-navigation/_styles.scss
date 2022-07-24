@@ -198,7 +198,7 @@
             height: var(--circle);
             right: calc(var(--padding) + #{susanoo.rem-calc(8)});
             top: calc(var(--padding) * var(--padding-multiply));
-            backdrop-filter: blur(0.04px);
+            backdrop-filter: blur(0.08px);
             border: {
                 radius: susanoo.rem-calc(40);
                 style: solid;
@@ -219,94 +219,73 @@
             }
             .content {
                 opacity: 1;
-                transform: translateX(0);
-                transition: transform 0s 0.9s;
-            }
-            a {
-                > span {
-                    &::before,
-                    &::after {
-                        opacity: 1;
-                        top: 0;
-                        transition: color var(--content-duration) var(--content-delay) linear, transform var(--content-duration) var(--content-delay) linear, top 0.3s 1s linear;
-                    }
-                }
             }
         }
     }
     .content {
         opacity: 0;
         z-index: 4;
-        transform: translateX(1000%);
-        transition: transform 0s 0.3s, opacity 0s 0.3s linear;
+        transition: opacity 0.5s linear;
         ul {
             @include lists.reset-list();
         }
-        li {
-            position: relative;
-        }
         a {
+            --top: 49%;
+
             @include links.reset();
             font: {
                 size: clamp(#{susanoo.rem-calc(60)}, 2vw, #{susanoo.rem-calc(80)});
             }
-            overflow: hidden;
+            color: transparent;
             &:hover {
                 &::before {
-                    left: 100%;
+                    transform: scale(1);
                 }
-                > span {
-                    &::before {
-                        color: var(--color-primary);
-                        transform: translate(#{susanoo.rem-calc(10)}, -3px);
-                    }
-                    &::after {
-                        color: var(--color-primary);
-                        transform: translate(#{susanoo.rem-calc(-10)}, 3px);
+                .layer {
+                    color: var(--color-tertiary);
+                    transform: skewX(12deg) translateX(5px);
+                    + .layer {
+                        transform: skewX(12deg) translateX(-5px);
                     }
                 }
             }
             &::before {
                 content: '';
                 position: absolute;
-                top: 50%;
-                left: -100%;
-                width: 100%;
-                height: 2px;
-                transform: translateY(-50%);
+                top: var(--top);
+                left: -10%;
+                right: -10%;
+                width: 120%;
+                height: 4px;
+                border: {
+                    radius: 4px;
+                }
+                margin: {
+                    top: -2px
+                }
                 background: {
-                    color: var(--color-blue);
+                    color: var(--color-pink);
                 }
-                transition: left 0.25s linear;
+                transform: scale(0);
+                transition: transform 0.7s cubic-bezier(0.16, 1.08, 0.38, 0.98);
             }
-            > span {
-                color: transparent;
-                position: relative;
-                &::before,
-                &::after {
-                    transition: top 0.3s 0.1s linear, opacity 0s 0.4s linear;
+            .layer {
+                display: block;
+                position: absolute;
+                overflow: hidden;
+                color: var(--color-secondary);
+                top: 0;
+                height: var(--top);
+                transition: all 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+                > span {
+                    display: block;
                 }
-                &::before {
-                    content: attr(data-text);
-                    position: absolute;
-                    top: susanoo.rem-calc(-100);
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    color: white;
-                    opacity: 0;
-                    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
-                }
-                &::after {
-                    content: attr(data-text);
-                    position: absolute;
-                    top: susanoo.rem-calc(-100);
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    color: white;
-                    opacity: 0;
-                    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+                + .layer {
+                    top: calc(var(--top) - 0.1%);
+                    height: calc(100% - var(--top) + 0.1%);
+                    > span {
+                        transform: translateY(-49%);
+                    }
                 }
             }
         }

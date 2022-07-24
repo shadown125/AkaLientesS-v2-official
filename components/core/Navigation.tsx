@@ -4,6 +4,7 @@ import Link from "next/link";
 import {links} from "../../content/NavigationData";
 import Image from "next/image";
 import {InitialLoadContext} from "../context/initialLoadContext";
+import navigationMouseMovement from "../../vanilla-js/NavigationMouseMovement";
 
 const Navigation = () => {
     const {loadState} = useContext(InitialLoadContext)
@@ -26,6 +27,10 @@ const Navigation = () => {
     }
 
     useEffect(() => {
+        const burgerContainer = document.getElementById('burger-navigation-container') as HTMLElement
+
+        navigationMouseMovement(burgerContainer)
+
         const animationDelay = 2000
 
         const delayActiveAnimation = setTimeout(() => {
@@ -90,22 +95,34 @@ const Navigation = () => {
                             />
                         </svg>
                     </button>
-                    <div className={`container${menu}`}>
+                    <div className={`container${menu}`} id="burger-navigation-container">
                         <div className="content">
-                            <ul>
+                            <ul data-offset="10">
                                 {links.map((item, index) => (
-                                    <li key={index} onClick={openAndCloseMenu}>
+                                    <li key={index} onClick={openAndCloseMenu} data-offset={(4 * (index + 1))}>
                                         <Link href={item.route}>
                                             <a>
-                                                <span data-text={item.name}>{ item.name }</span>
+                                                { item.name }
+                                                <span className="layer">
+                                                    <span>{ item.name }</span>
+                                                </span>
+                                                <span className="layer">
+                                                    <span>{ item.name }</span>
+                                                </span>
                                             </a>
                                         </Link>
                                     </li>
                                 ))}
-                                <li onClick={openAndCloseMenu}>
+                                <li onClick={openAndCloseMenu} data-offset={(links.length * 4) + 4}>
                                     <Link href="#contact">
                                         <a>
-                                            <span data-text="CONTACT">CONTACT</span>
+                                            CONTACT
+                                            <span className="layer">
+                                                    <span>CONTACT</span>
+                                                </span>
+                                            <span className="layer">
+                                                    <span>CONTACT</span>
+                                            </span>
                                         </a>
                                     </Link>
                                 </li>
