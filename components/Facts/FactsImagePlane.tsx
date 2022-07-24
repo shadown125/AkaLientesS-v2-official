@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react";
+import {useRef, useState} from "react";
 // @ts-ignore
 import { Plane, useCurtains } from "react-curtains";
 // @ts-ignore

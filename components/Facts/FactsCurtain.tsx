@@ -1,4 +1,3 @@
-import Image from "next/image";
 // @ts-ignore
 import {Curtains} from 'react-curtains';
 import FactsImagePlane from "./FactsImagePlane";
