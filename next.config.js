@@ -44,7 +44,8 @@ const nextConfig = {
         new SubresourceIntegrityPlugin()
     );
     return config;
-  }
+  },
+  i18n
 }
 
 module.exports = nextConfig
