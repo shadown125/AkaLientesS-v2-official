@@ -218,12 +218,14 @@
                 transition: transform var(--core-delay);
             }
             .content {
+                pointer-events: auto;
                 opacity: 1;
             }
         }
     }
     .content {
         opacity: 0;
+        pointer-events: none;
         z-index: 4;
         transition: opacity 0.5s linear;
         ul {
