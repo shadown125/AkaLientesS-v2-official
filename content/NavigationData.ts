@@ -1,14 +1,14 @@
 export const links = [
     {
         route: '#facts',
-        name: 'FACTS'
+        name: 'facts'
     },
     {
         route: '#skills',
-        name: 'SKILLS'
+        name: 'skills'
     },
     {
         route: '#my-work',
-        name: 'MY WORK'
+        name: 'my-work'
     }
 ]

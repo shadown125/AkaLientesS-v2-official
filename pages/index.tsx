@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import FloatingLines from "../elements/FloatingLines";
 import Facts from "../components/Facts/Facts";
 import SidebarLetters from "../components/core/SidebarLetters";
@@ -11,6 +11,7 @@ import TsParticles from "../components/core/TsParticles";
 import InitialPageLoader from "../components/core/InitialPageLoader";
 import MouseTrailer from "../vanilla-js/MouseTrailer";
 import {useEffect} from "react";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 const Home: NextPage = () => {
     useEffect(() => {
@@ -37,3 +38,11 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps = async ({locale}) => {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale!, ['common', 'home']))
+        }
+    }
+}

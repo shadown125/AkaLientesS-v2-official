@@ -4,6 +4,7 @@ import HeadPage from "../components/core/HeadPage";
 import Footer from "../components/core/Footer";
 import {InitialLoadContextProvider} from "../components/context/initialLoadContext";
 import {useEffect, useState} from "react";
+import {appWithTranslation} from "next-i18next";
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [load, setLoad] = useState<boolean>(false)
@@ -31,4 +32,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)

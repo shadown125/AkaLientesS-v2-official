@@ -15,6 +15,7 @@ const ContentSecurityPolicy = `
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  i18n,
   async headers() {
     return [
       {
@@ -67,7 +68,6 @@ const nextConfig = {
     );
     return config;
   },
-  i18n
 }
 
 module.exports = nextConfig

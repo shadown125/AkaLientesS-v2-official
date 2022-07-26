@@ -5,8 +5,10 @@ import {links} from "../../content/NavigationData";
 import Image from "next/image";
 import {InitialLoadContext} from "../context/initialLoadContext";
 import navigationMouseMovement from "../../vanilla-js/NavigationMouseMovement";
+import {useTranslation} from "next-i18next";
 
 const Navigation = () => {
+    const { t } = useTranslation()
     const {loadState} = useContext(InitialLoadContext)
     const { ref, inView } = useInView({
         delay: 1000,
@@ -64,7 +66,7 @@ const Navigation = () => {
                                 <Link href={item.route}>
                                     <a>
                                         <span>
-                                            <span>{ item.name }</span>
+                                            <span>{ t(`home:navigation.${item.name}`).toLocaleUpperCase() }</span>
                                         </span>
                                     </a>
                                 </Link>
@@ -73,7 +75,7 @@ const Navigation = () => {
                     </ul>
                     <Link href="#contact">
                         <a className='button'>
-                            <span>Contact me</span>
+                            <span>{t('common:contact-me')}</span>
                         </a>
                     </Link>
                 </nav>
@@ -102,12 +104,12 @@ const Navigation = () => {
                                     <li key={index} onClick={openAndCloseMenu} data-offset={(4 * (index + 1))}>
                                         <Link href={item.route}>
                                             <a>
-                                                { item.name }
+                                                { t(`home:navigation.${item.name}`).toLocaleUpperCase() }
                                                 <span className="layer">
-                                                    <span>{ item.name }</span>
+                                                    <span>{ t(`home:navigation.${item.name}`).toLocaleUpperCase() }</span>
                                                 </span>
                                                 <span className="layer">
-                                                    <span>{ item.name }</span>
+                                                    <span>{ t(`home:navigation.${item.name}`).toLocaleUpperCase() }</span>
                                                 </span>
                                             </a>
                                         </Link>
@@ -116,12 +118,12 @@ const Navigation = () => {
                                 <li onClick={openAndCloseMenu} data-offset={(links.length * 4) + 4}>
                                     <Link href="#contact">
                                         <a>
-                                            CONTACT
+                                            { t('common:contact').toLocaleUpperCase() }
                                             <span className="layer">
-                                                    <span>CONTACT</span>
+                                                    <span>{t('common:contact').toLocaleUpperCase()}</span>
                                                 </span>
                                             <span className="layer">
-                                                    <span>CONTACT</span>
+                                                    <span>{t('common:contact').toLocaleUpperCase()}</span>
                                             </span>
                                         </a>
                                     </Link>
