@@ -3,8 +3,10 @@ import {useInView} from "react-intersection-observer";
 import FactsItemKeys from "./FactsItemKeys";
 import FactsCurtain from "./FactsCurtain";
 import {useEffect, useState} from "react";
+import {useTranslation} from "next-i18next";
 
 const FactsItem = (props: props) => {
+    const { t } = useTranslation()
     const { ref, inView } = useInView({
         delay: 500,
         triggerOnce: true
@@ -20,16 +22,16 @@ const FactsItem = (props: props) => {
             <div className="image">
                 {clientSideShow && <FactsCurtain image={props.image} headline={props.headline} />}
                 <h3 className="headline h3">
-                    <span>{ props.headline }</span>
+                    <span>{ t(`home:sections.facts.${props.headline}`) }</span>
                 </h3>
             </div>
             <div className="content">
                 <h4 className="headline h4">
-                    <span>Fact { props.index + 1 }</span>
+                    <span>{ `${t('common:fact')} ${props.index + 1}` }</span>
                 </h4>
                 <div className="description">
                     <p>
-                        { props.text }
+                        { t(`home:sections.facts.${props.text}`, {joinArrays: ''})}
                     </p>
                 </div>
             </div>

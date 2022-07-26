@@ -1,7 +1,9 @@
 import {useInView} from "react-intersection-observer";
 import {keysProps} from "../../types/FactsTypes";
+import {useTranslation} from "next-i18next";
 
 const FactsItemKeys = (props: keysProps) => {
+    const { t } = useTranslation('home')
     const { ref, inView } = useInView({
         delay: 300,
         triggerOnce: true
@@ -13,7 +15,7 @@ const FactsItemKeys = (props: keysProps) => {
             {props.keys.map((item, index) => (
                 <div key={index}>
                     <span>{ item.head }</span>
-                    <span>{ item.name }</span>
+                    <span>{ t(`sections.facts.${item.name}`) }</span>
                 </div>
             ))}
         </div>

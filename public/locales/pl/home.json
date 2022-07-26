@@ -3,5 +3,36 @@
     "facts": "Fakty",
     "skills": "Skille",
     "my-work": "Praca"
+  },
+  "sections": {
+    "facts": {
+      "competitive-player": "Zawodnik",
+      "competitive-player-text": ["Zacząłem grać w gry jako dziecko,",
+        " Przez lata grałem w wiele tytułów, ale tym, który całkowicie mnie wciągnął, było League of Legends.",
+        " Ta gra była czymś, co wciągnęło mnie w konkurencyjne granie i sprawiło, że chciałem stać się najlepszy.",
+        " I udało mi się. W czasach swojej świetności byłem najlepszym graczem Akali na świecie i w top 100 Challenger (najwyższa ranga w grze, w której znajduje się 200 najlepszych graczy)."],
+      "games": "Gry",
+      "competitive": "Konkurencyjny",
+      "challenger": "Challenger",
+      "sport": "Sport",
+      "sport-text": ["Sport odegrał ogromną rolę w moim życiu. ",
+        "Połowę życia spędziłem na próbowaniu różnych dyscyplin",
+        " Jako dziecko marzyłem o tym, żeby być wielkim piłkarzem i przez dość długi czas poważnie o tym myślałem.",
+        " Potrafiłem spędzić cały dzień trenując, by stać się lepszym. Ale po kilku latach treningów, ",
+        "Zdecydowałem, że to nie jest ścieżka, którą chcę podążać i zacząłem spędzać więcej czasu grając competitive w gry i ucząc się podstaw programowania."
+      ],
+      "durability": "Wytrzymałość",
+      "football": "Piłka nożna",
+      "star": "Gwiazda",
+      "healthy-lifestyle": "Zdrowy styl zycia",
+      "healthy-lifestyle-text": ["Zdrowie jest jedną z najważniejszych rzeczy. Zawsze powinno stać na pierwszym miejscu. Dlatego w połączeniu ze sportem ",
+        "staram się jeść zdrowo i prowadzić zdrowy tryb życia. Mimo to lubię od czasu do czasu zjeść jakiś fast food, bo wszystko jest dla ludzi ",
+        "ale z umiarem. Zdrowy styl życia daje również wiele długoterminowych korzyści i zalet, ",
+        ", dlatego staram się żyć nim jak najczęściej"
+      ],
+      "health": "Zdrowie",
+      "regularity": "Regularność",
+      "food": "Żywność"
+    }
   }
 }
