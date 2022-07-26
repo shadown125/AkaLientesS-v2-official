@@ -3,8 +3,6 @@ import {useInView} from "react-intersection-observer";
 import FactsItemKeys from "./FactsItemKeys";
 import FactsCurtain from "./FactsCurtain";
 import {useEffect, useState} from "react";
-import {useMediaQuery} from "react-responsive";
-import Image from "next/image";
 
 const FactsItem = (props: props) => {
     const { ref, inView } = useInView({
