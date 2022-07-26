@@ -4,8 +4,10 @@ import Typewriter from "../helpers/Typewriter";
 import baffle from '../Baffle/baffle'
 import {useContext, useEffect, useState} from "react";
 import {InitialLoadContext} from "../context/initialLoadContext";
+import {useTranslation} from "next-i18next";
 
 const Staging = () => {
+    const { t } = useTranslation('common')
     const {loadState} = useContext(InitialLoadContext)
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -47,7 +49,7 @@ const Staging = () => {
                             <Typewriter word='LientesS' isVisible={active()} />
                         </h1>
                         <p className="author">
-                            Created and Designed by Dawid Oleksiuk
+                            { t('created-by') }
                         </p>
                     </div>
                     <div className={`letters${active() ? ' is-active' : ''}`}>
