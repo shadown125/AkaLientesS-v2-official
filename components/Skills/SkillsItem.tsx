@@ -1,8 +1,10 @@
 import {useInView} from "react-intersection-observer";
 import {skillsItemProps} from "../../types/SkillsTypes";
 import {CSSProperties} from "react";
+import {useTranslation} from "next-i18next";
 
 const SkillsItem = (props: skillsItemProps) => {
+    const { t } = useTranslation('home')
     const { ref, inView } = useInView({
         triggerOnce: true
     });
@@ -19,7 +21,7 @@ const SkillsItem = (props: skillsItemProps) => {
                     {props.keys.map((item, index) => (
                         <div key={index}>
                             <span>{ item.head }</span>
-                            <span>{ item.name }</span>
+                            <span>{ t(`sections.skills.${item.name}`) }</span>
                         </div>
                     ))}
                 </div>

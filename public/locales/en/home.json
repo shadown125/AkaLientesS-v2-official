@@ -33,6 +33,21 @@
       "health": "Health",
       "regularity": "Regularity",
       "food": "Food"
-    }
+    },
+    "skills": {
+      "structure": "Structure",
+      "architecture": "Architecture",
+      "grid": "Grid",
+      "beauty": "Beauty",
+      "animations": "Animations",
+      "cascade": "Cascade",
+      "everything": "Everything",
+      "effects": "Effects",
+      "v8-engine": "V8 Engine",
+      "dirty": "Dirty",
+      "all-in-one": "All in one",
+      "google": "Google"
+    },
+    "frameworks-and-libraries": "Frameworks and Libraries"
   }
 }

@@ -1,7 +1,9 @@
 import {useInView} from "react-intersection-observer";
 import SkillsFrameworksItem from "./SkillsFrameworksItem";
+import {useTranslation} from "next-i18next";
 
 const SkillsFrameworks = () => {
+    const { t } = useTranslation('home')
     const { ref, inView } = useInView({
         triggerOnce: true
     });
@@ -9,7 +11,7 @@ const SkillsFrameworks = () => {
     return (
         <div ref={ref} className={`frameworks${ inView ? ' is-active' : ''}`}>
             <h3 className="title title--frameworks h2">
-                <span>Frameworks and Libraries</span>
+                <span>{ t('sections.frameworks-and-libraries') }</span>
             </h3>
             <ul>
                 <SkillsFrameworksItem />

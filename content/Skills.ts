@@ -5,15 +5,15 @@ export const skills = [
         keys: [
             {
                 head: '構造',
-                name: 'Structure'
+                name: 'structure'
             },
             {
                 head: '建築',
-                name: 'Architecture'
+                name: 'architecture'
             },
             {
                 head: '盤',
-                name: 'Grid'
+                name: 'grid'
             }
         ]
     },
@@ -23,15 +23,15 @@ export const skills = [
         keys: [
             {
                 head: '美しさ',
-                name: 'Beauty'
+                name: 'beauty'
             },
             {
                 head: 'アニメ',
-                name: 'Animations'
+                name: 'animations'
             },
             {
                 head: 'カスケード',
-                name: 'Cascade'
+                name: 'cascade'
             }
         ]
     },
@@ -41,15 +41,15 @@ export const skills = [
         keys: [
             {
                 head: 'すべて',
-                name: 'Everything'
+                name: 'everything'
             },
             {
                 head: '効果',
-                name: 'Effects'
+                name: 'effects'
             },
             {
                 head: 'V8エンジン',
-                name: 'V8 Engine'
+                name: 'v8-engine'
             }
         ]
     },
@@ -59,15 +59,15 @@ export const skills = [
         keys: [
             {
                 head: 'ダーティー',
-                name: 'Dirty'
+                name: 'dirty'
             },
             {
                 head: 'すべて1つで',
-                name: 'All in one'
+                name: 'all-in-one'
             },
             {
                 head: 'グーグル',
-                name: 'Google'
+                name: 'google'
             }
         ]
     }
