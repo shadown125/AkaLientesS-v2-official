@@ -1,16 +1,16 @@
 export const projects = [
     {
         name: 'KataLientesS',
-        description: 'Biggest React Project',
+        description: 'description-react',
         link: 'https://www.katalientess.com',
         image: '/katalientess.png',
-        content: 'The largest React project I have created on my own.'
+        content: 'content-react'
     },
     {
         name: 'Susanoo CMS',
-        description: 'The most ambitious Project',
+        description: 'description-sus',
         link: 'https://github.com/shadown125/SuSanoo',
         image: '/susanoo.png',
-        content: 'I really wanted to create something big. Something, I can develop over years.'
+        content: 'content-sus'
     }
 ]

@@ -48,6 +48,12 @@
       "all-in-one": "Wszystko w jednym",
       "google": "Google"
     },
-    "frameworks-and-libraries": "Frameworki i Biblioteki"
+    "frameworks-and-libraries": "Frameworki i Biblioteki",
+    "my-work": {
+      "description-react": "Największy projekt w React",
+      "content-react": "Największy projekt React, który stworzyłem samodzielnie.",
+      "description-sus": "Najbardziej ambitny projekt",
+      "content-sus": "Naprawdę chciałem stworzyć coś dużego. Coś, co będę mógł rozwijać przez lata."
+    }
   }
 }

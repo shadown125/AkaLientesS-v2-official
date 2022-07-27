@@ -1,8 +1,10 @@
 import {useInView} from "react-intersection-observer";
 import MyWorkItem from "./MyWorkItem";
 import {projects} from "../../content/MyWorkData";
+import { useTranslation } from "next-i18next";
 
 const MyWork = () => {
+    const { t } = useTranslation('home')
     const { ref, inView } = useInView({
         triggerOnce: true,
     });
@@ -12,7 +14,7 @@ const MyWork = () => {
         <section ref={ref} id="my-work" className={`my-work${ inView ? ' is-active' : ''}`}>
             <div className="wrapper">
                 <h2 className="title h2">
-                    <span>My Work</span>
+                    <span>{ t('navigation.my-work') }</span>
                 </h2>
                 <ul>
                     {projects.map((item, index) => (
