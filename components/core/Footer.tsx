@@ -2,8 +2,10 @@ import SocialLinks from "../../elements/SocialLinks";
 import {useInView} from "react-intersection-observer";
 import {useContext} from "react";
 import {InitialLoadContext} from '../context/initialLoadContext'
+import {useTranslation} from "next-i18next";
 
 const Footer = () => {
+    const { t } = useTranslation('common')
     const { ref, inView } = useInView();
     const {loadState} = useContext(InitialLoadContext);
 
@@ -12,7 +14,7 @@ const Footer = () => {
             <div className="wrapper">
                 <div className="container">
                     <p className="credits">
-                        &copy; { new Date().getFullYear() } All rights reserved by Dawid Oleksiuk
+                        &copy; { new Date().getFullYear() } {t('credits')}
                     </p>
                     <SocialLinks active={inView ? ' is-active' : ''} />
                 </div>

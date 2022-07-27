@@ -6,5 +6,6 @@
   "submit": "Submit",
   "name": "Name",
   "subject": "Subject",
-  "message": "Message"
+  "message": "Message",
+  "credits": "All rights reserved by Dawid Oleksiuk"
 }
