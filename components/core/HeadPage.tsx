@@ -20,6 +20,10 @@ const HeadPage = () => {
             <meta name="twitter:title" content="AkaLientesS"/>
             <meta name="twitter:description" content="Discover my Portfolio to get information about me and also inspiration"/>
             <meta name="twitter:image" content="/seoAkalientess.png" />
+
+            <link rel="alternate" href="https://www.akalientess.com/en" hrefLang="en"/>
+            <link rel="alternate" href="https://www.akalientess.com/pl" hrefLang="pl"/>
+
             <meta name="format-detection" content="telephone=no"/>
             <link rel="icon" type="image/png" href="/favicon.png" />
             <link rel="apple-touch-icon" href="/favicon.png" />
