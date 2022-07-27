@@ -8,8 +8,10 @@ import {ContactDataInterface} from "../../interfaces/ContactDataInterface";
 import {useInView} from "react-intersection-observer";
 import {contact} from "../../schemas/validation/contact";
 import {useState} from "react";
+import {useTranslation} from "next-i18next";
 
 const ContactForm = () => {
+    const { t } = useTranslation('common')
     const { ref, inView } = useInView();
     const [notification, setNotification] = useState<string>('');
 
@@ -61,7 +63,7 @@ const ContactForm = () => {
                             <MessageAreaField name="message" />
                         </div>
                         <button className="button" disabled={isSubmitting} type="submit">
-                            <span>Submit</span>
+                            <span>{ t('submit') }</span>
                         </button>
                     </Form>
                 )}

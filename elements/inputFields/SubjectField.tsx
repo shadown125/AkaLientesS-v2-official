@@ -1,6 +1,8 @@
 import { useField } from "formik";
+import {useTranslation} from "next-i18next";
 
 const SubjectField = (props: {name: string}) => {
+    const { t } = useTranslation('common')
     const [field, meta] = useField(props)
     const errorText = meta.error && meta.touched ? meta.error : ''
 
@@ -8,7 +10,7 @@ const SubjectField = (props: {name: string}) => {
         return (
             <>
                 <div className="input is-invalid">
-                    <input type="text" className="is-invalid" placeholder="Subject*" {...field} />
+                    <input type="text" className="is-invalid" placeholder={`${t('subject')}*`} {...field} />
                 </div>
                 <div className="error-message">{errorText}</div>
             </>
@@ -17,7 +19,7 @@ const SubjectField = (props: {name: string}) => {
 
     return (
         <div className="input">
-            <input type="text" placeholder="Subject*" {...field} />
+            <input type="text" placeholder={`${t('subject')}*`}  {...field} />
         </div>
     )
 }

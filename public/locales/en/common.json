@@ -2,5 +2,9 @@
   "created-by": "Created and Designed by Dawid Oleksiuk",
   "contact" : "Contact",
   "contact-me": "Contact me",
-  "fact": "Fact"
+  "fact": "Fact",
+  "submit": "Submit",
+  "name": "Name",
+  "subject": "Subject",
+  "message": "Message"
 }
