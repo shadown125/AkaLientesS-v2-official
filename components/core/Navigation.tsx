@@ -6,9 +6,11 @@ import Image from "next/image";
 import {InitialLoadContext} from "../context/initialLoadContext";
 import navigationMouseMovement from "../../vanilla-js/NavigationMouseMovement";
 import {useTranslation} from "next-i18next";
+import {useRouter} from "next/router";
 
 const Navigation = () => {
     const { t } = useTranslation()
+    const router = useRouter()
     const {loadState} = useContext(InitialLoadContext)
     const { ref, inView } = useInView({
         delay: 1000,
@@ -31,7 +33,7 @@ const Navigation = () => {
     useEffect(() => {
         const burgerContainer = document.getElementById('burger-navigation-container') as HTMLElement
 
-        navigationMouseMovement(burgerContainer)
+        navigationMouseMovement(burgerContainer);
 
         const animationDelay = 2000
 
@@ -60,7 +62,7 @@ const Navigation = () => {
                             <Image layout="fixed" width={80} height={80} src='/brandLogo.png' alt='brand-logo' />
                         </a>
                     </Link>
-                    <ul>
+                    <ul className="nav-links">
                         {links.map((item, index) => (
                             <li key={index}>
                                 <Link href={item.route}>
@@ -72,6 +74,22 @@ const Navigation = () => {
                                 </Link>
                             </li>
                         ))}
+                    </ul>
+                    <ul className="languages">
+                        <li>
+                            <Link href="/" locale={'en'} >
+                                <a className={router.locale === 'en' ? 'is-active' : ''}>
+                                    <span>EN</span>
+                                </a>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/" locale={'pl'} >
+                                <a className={router.locale === 'pl' ? 'is-active' : ''}>
+                                    <span>PL</span>
+                                </a>
+                            </Link>
+                        </li>
                     </ul>
                     <Link href="#contact">
                         <a className='button'>

@@ -127,35 +127,37 @@
         display: flex;
         gap: calc(#{susanoo.rem-calc(64)} - var(--li-padding));
     }
-    li {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 susanoo.rem-calc(20);
-        &::after {
-            @include helpers.steroid-lines();
-            content: '';
-            position: absolute;
-            height: 0;
-            width: 2px;
-            top: 45%;
-            right: 0;
-            background: {
-                color: var(--color-tertiary);
-            }
-        }
-        &:first-child {
-            &::before {
+    .nav-links {
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 susanoo.rem-calc(20);
+            &::after {
                 @include helpers.steroid-lines();
                 content: '';
                 position: absolute;
                 height: 0;
                 width: 2px;
                 top: 45%;
-                left: 0;
+                right: 0;
                 background: {
                     color: var(--color-tertiary);
+                }
+            }
+            &:first-child {
+                &::before {
+                    @include helpers.steroid-lines();
+                    content: '';
+                    position: absolute;
+                    height: 0;
+                    width: 2px;
+                    top: 45%;
+                    left: 0;
+                    background: {
+                        color: var(--color-tertiary);
+                    }
                 }
             }
         }
@@ -163,7 +165,7 @@
     .button {
         opacity: 0;
         margin: {
-            left: auto;
+            left: susanoo.rem-calc(20);
         }
         &::before,
         &::after {

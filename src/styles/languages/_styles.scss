@@ -1,0 +1,62 @@
+@use '../susanoo';
+
+.main-navigation {
+    .languages {
+        color: white;
+        margin: {
+            left: auto;
+        }
+        box-shadow: -0.05em 0 10px var(--color-tertiary), 0.05em 0 10px var(--color-secondary);
+        border: {
+            radius: susanoo.rem-calc(50);
+            style: solid;
+            color: var(--color-tertiary);
+        }
+        a {
+            padding: susanoo.rem-calc(6) susanoo.rem-calc(20);
+            &:hover {
+                &::before {
+                    background: {
+                        color: var(--color-tertiary);
+                    }
+                }
+            }
+            &::before {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform: unset;
+                border: {
+                    radius: susanoo.rem-calc(50);
+                }
+                background: {
+                    color: unset;
+                }
+                box-shadow: unset;
+                transition: background-color 0.2s linear;
+                opacity: 0.7;
+                filter: blur(1px);
+                &:hover {
+                    transform: unset;
+                }
+            }
+            &::after {
+                content: unset;
+            }
+            &.is-active {
+                &::before {
+                    content: '';
+                    background: {
+                        color: var(--color-secondary);
+                    }
+                }
+            }
+            > span {
+                &::before {
+                    content: unset;
+                }
+            }
+        }
+    }
+}
