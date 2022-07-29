@@ -10,44 +10,59 @@ const TsParticles = () => {
         interactivity: {
             events: {
                 onHover: {
-                    mode: 'repulse',
-                        enable: true
-                }
-            }
-        },
-        modes: {
-            push: {
-                quantity: 15
+                    enable: true,
+                    mode: "repulse",
+                },
+                resize: true,
             },
-            repulse: {
-                distance: 30
-            }
+            modes: {
+                push: {
+                    quantity: 4,
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.7,
+                },
+            },
         },
         particles: {
             color: {
-                value: ['FF0000DD', '00FFFFDD']
+                value: ['FF0000DD', '00FFFFDD'],
             },
             links: {
                 color: 'FF0000DD',
-                    distance: 40,
-                    enable: true
+                distance: 40,
+                enable: true,
+                width: 1,
+            },
+            collisions: {
+                enable: true,
             },
             move: {
-                enable: true
+                enable: true,
+                speed: 3,
+            },
+            number: {
+                density: {
+                    enable: true,
+                    area: 800,
+                },
+                value: 20,
             },
             opacity: {
                 value: {
                     min: 0.1,
-                        max: 0.4
+                    max: 0.6,
                 }
             },
+            shape: {
+                type: "circle",
+            },
             size: {
-                value: {
-                    min: 1,
-                        max: 3
-                }
-            }
-        }
+                value: { min: 1, max: 3 },
+            },
+        },
+        detectRetina: true,
     }
 
     return (
