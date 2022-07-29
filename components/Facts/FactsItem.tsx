@@ -1,9 +1,8 @@
 import {props} from "../../types/FactsTypes";
 import {useInView} from "react-intersection-observer";
 import FactsItemKeys from "./FactsItemKeys";
-import FactsCurtain from "./FactsCurtain";
-import {useEffect, useState} from "react";
 import {useTranslation} from "next-i18next";
+import Image from "next/image";
 
 const FactsItem = (props: props) => {
     const { t } = useTranslation()
@@ -11,16 +10,11 @@ const FactsItem = (props: props) => {
         delay: 500,
         triggerOnce: true
     });
-    const [clientSideShow, setClientSideShow] = useState<boolean>(false)
-
-    useEffect(() => {
-        setClientSideShow(true)
-    }, [])
 
     return (
         <div ref={ref} className={`grid${inView ? ' is-active' : ''}`}>
             <div className="image">
-                {clientSideShow && <FactsCurtain image={props.image} headline={props.headline} />}
+                <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} />
                 <h3 className="headline h3">
                     <span>{ t(`home:sections.facts.${props.headline}`) }</span>
                 </h3>
