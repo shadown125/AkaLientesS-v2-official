@@ -170,7 +170,7 @@
         margin: {
             left: auto;
         }
-        gap: susanoo.rem-calc(30) susanoo.rem-calc(60);
+        gap: susanoo.rem-calc(30) susanoo.rem-calc(40);
         @include susanoo.media(large) {
             flex-direction: column;
         }
