@@ -133,12 +133,12 @@ class MouseTrailerModule {
     }
 
     private init () {
-        document.body.addEventListener('orientationchange', this.resize.bind(this));
-        window.addEventListener('resize', this.resize.bind(this));
-        document.addEventListener('mousemove', this.mousemove.bind(this));
-        document.addEventListener('touchstart', this.touchstart.bind(this));
-        window.addEventListener('focus', this.start.bind(this));
-        window.addEventListener('blur', this.stop.bind(this));
+        document.body.addEventListener('orientationchange', this.resize.bind(this), {passive: true});
+        window.addEventListener('resize', this.resize.bind(this), {passive: true});
+        document.addEventListener('mousemove', this.mousemove.bind(this), {passive: true});
+        document.addEventListener('touchstart', this.touchstart.bind(this), {passive: true});
+        window.addEventListener('focus', this.start.bind(this), {passive: true});
+        window.addEventListener('blur', this.stop.bind(this), {passive: true});
 
         this.reset();
         this.loop();
