@@ -5,8 +5,10 @@ import baffle from '../Baffle/baffle'
 import {useContext, useEffect, useState} from "react";
 import {InitialLoadContext} from "../context/initialLoadContext";
 import {useTranslation} from "next-i18next";
+import {useMediaQuery} from "react-responsive";
 
 const Staging = () => {
+    const isSmallScreen = useMediaQuery({query: '(max-width: 75em)'})
     const { t } = useTranslation('common')
     const {loadState} = useContext(InitialLoadContext)
     const { ref, inView } = useInView({
@@ -24,7 +26,7 @@ const Staging = () => {
         }, animationDelay)
 
         const baffleTimeout = setTimeout(() => {
-            if (delayedActive) {
+            if (delayedActive && !isSmallScreen) {
                 baffle('.author').set({
                     characters: '░░▓ ▒▒/▒░ ░██░▒ █░> ██░▓░ █░░▒ ▓>/ ██▓▓ ▓>░/',
                     speed: 50
