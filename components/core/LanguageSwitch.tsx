@@ -3,7 +3,7 @@ import {router} from "next/client";
 
 const LanguageSwitch = () => {
     return (
-        <ul className="languages-switch">
+        <ul className="language-switch">
             <li>
                 <Link href="/" locale={'en'} >
                     <a className={router.locale === 'en' ? 'is-active' : ''}>
