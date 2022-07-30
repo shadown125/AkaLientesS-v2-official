@@ -59,7 +59,7 @@
             color: white;
             position: relative;
             &::before {
-                content: unset;
+                content: unset !important;
             }
         }
     }
