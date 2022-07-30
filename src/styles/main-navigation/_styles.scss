@@ -14,7 +14,7 @@
     display: flex;
     gap: susanoo.rem-calc(50);
     padding: susanoo.rem-calc(36) 0;
-    align-items: center;
+    align-items: flex-start;
     opacity: 0;
     transform: translateY(50%);
     min: {
@@ -162,10 +162,23 @@
             }
         }
     }
+    .right-row {
+        display: flex;
+        align: {
+            items: flex-start;
+        }
+        margin: {
+            left: auto;
+        }
+        gap: susanoo.rem-calc(30) susanoo.rem-calc(60);
+        @include susanoo.media(large) {
+            flex-direction: column;
+        }
+    }
     .button {
         opacity: 0;
-        margin: {
-            left: susanoo.rem-calc(20);
+        @include susanoo.media(large) {
+            order: -1;
         }
         &::before,
         &::after {

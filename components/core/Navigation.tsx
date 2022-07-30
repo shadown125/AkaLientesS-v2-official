@@ -75,27 +75,29 @@ const Navigation = () => {
                             </li>
                         ))}
                     </ul>
-                    <ul className="languages">
-                        <li>
-                            <Link href="/" locale={'en'} >
-                                <a className={router.locale === 'en' ? 'is-active' : ''}>
-                                    <span>EN</span>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/" locale={'pl'} >
-                                <a className={router.locale === 'pl' ? 'is-active' : ''}>
-                                    <span>PL</span>
-                                </a>
-                            </Link>
-                        </li>
-                    </ul>
-                    <Link href="#contact">
-                        <a className='button'>
-                            <span>{t('common:contact-me')}</span>
-                        </a>
-                    </Link>
+                    <div className="right-row">
+                        <ul className="languages">
+                            <li>
+                                <Link href="/" locale={'en'} >
+                                    <a className={router.locale === 'en' ? 'is-active' : ''}>
+                                        <span>EN</span>
+                                    </a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/" locale={'pl'} >
+                                    <a className={router.locale === 'pl' ? 'is-active' : ''}>
+                                        <span>PL</span>
+                                    </a>
+                                </Link>
+                            </li>
+                        </ul>
+                        <Link href="#contact">
+                            <a className='button'>
+                                <span>{t('common:contact-me')}</span>
+                            </a>
+                        </Link>
+                    </div>
                 </nav>
                 <nav className={`section absolute-grid burger-navigation${windowTop !== 0 ? ' is-visible' : ''}${menu}`}>
                     <button className={`menu${menu}`} onClick={openAndCloseMenu}>
