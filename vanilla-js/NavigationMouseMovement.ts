@@ -15,7 +15,7 @@ class NavigationMouseMovementModule {
     }
 
     private init () {
-        window.addEventListener('mousemove', this.debounce(this.mousemove.bind(this), 4))
+        window.addEventListener('mousemove', this.mousemove.bind(this), {passive: true})
     }
 
     private mousemove (event: any) {
@@ -40,17 +40,6 @@ class NavigationMouseMovementModule {
 
             item.style.transform = `translate3d(${offsetX * (offsetLayer * 4)}px, ${offsetY * (offsetLayer * 4)}px, 20px)`
         })
-    }
-
-    private debounce (func: Function, timeout: number) {
-        let timer: NodeJS.Timeout
-
-        return (...args: any) => {
-            clearTimeout(timer)
-            timer = setTimeout(() => {
-                func.apply(this, args)
-            }, timeout)
-        }
     }
 }
 
