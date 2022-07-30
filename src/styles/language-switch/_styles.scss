@@ -13,6 +13,7 @@
         style: solid;
         color: var(--color-tertiary);
     }
+    opacity: 0;
     a {
         padding: susanoo.rem-calc(6) susanoo.rem-calc(20);
         &:hover {

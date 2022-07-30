@@ -27,7 +27,8 @@
         opacity: 1;
         transform: translateY(0);
         transition: opacity var(--inital-animation-duration) ease-in-out, transform var(--inital-animation-duration) ease-in-out;
-        .button {
+        .button,
+        .language-switch {
             opacity: 1;
             transition: opacity var(--inital-animation-duration) var(--inital-animation-duration) ease-in-out;
         }
