@@ -133,6 +133,7 @@ $sus-breakpoints: (
     medium: rem-calc(800),
     large: rem-calc(1200),
     xlarge: rem-calc(1440),
+    xxlarge: rem-calc(2560),
 );
 
 @mixin media($breakpoint, $mode: 'max') {
