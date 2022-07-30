@@ -10,22 +10,21 @@ import Contact from "../components/contact/Contact";
 import TsParticles from "../components/core/TsParticles";
 import InitialPageLoader from "../components/core/InitialPageLoader";
 import MouseTrailer from "../vanilla-js/MouseTrailer";
-import {useEffect} from "react";
+import {MutableRefObject, useEffect, useRef} from "react";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useMediaQuery} from "react-responsive";
 
 const Home: NextPage = () => {
     const isMobile = useMediaQuery({query: '(max-width: 40em)'})
+    const canvas = useRef<HTMLCanvasElement>() as MutableRefObject<HTMLCanvasElement>
 
     useEffect(() => {
-        const mouseTrailerCanvas = document.getElementById('mouse-trailer') as HTMLCanvasElement
-
-        !isMobile && MouseTrailer(mouseTrailerCanvas)
-    })
+        !isMobile && MouseTrailer(canvas.current)
+    }, [isMobile])
 
   return (
    <>
-       <canvas id='mouse-trailer' />
+       <canvas ref={canvas} id='mouse-trailer' />
        <InitialPageLoader />
        <TsParticles />
        <Navigation />
