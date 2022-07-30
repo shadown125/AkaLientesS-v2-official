@@ -6,12 +6,10 @@ import Image from "next/image";
 import {InitialLoadContext} from "../context/initialLoadContext";
 import navigationMouseMovement from "../../vanilla-js/NavigationMouseMovement";
 import {useTranslation} from "next-i18next";
-import {useRouter} from "next/router";
 import LanguageSwitch from "./LanguageSwitch";
 
 const Navigation = () => {
     const { t } = useTranslation()
-    const router = useRouter()
     const {loadState} = useContext(InitialLoadContext)
     const { ref, inView } = useInView({
         delay: 1000,
