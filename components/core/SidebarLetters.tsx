@@ -2,8 +2,10 @@ import {useInView} from "react-intersection-observer";
 import {textLeft, textRight} from "../../content/SidebarLettersData";
 import {useContext, useEffect, useState} from "react";
 import {InitialLoadContext} from "../context/initialLoadContext";
+import {useMediaQuery} from "react-responsive";
 
 const SidebarLetters = () => {
+    const isTablet = useMediaQuery({query: '(max-width: 50em)'})
     const {loadState} = useContext(InitialLoadContext)
     const { ref, inView } = useInView({
         triggerOnce: true
@@ -14,11 +16,13 @@ const SidebarLetters = () => {
     const active = () => inView && loadState
 
     useEffect(() => {
-        const onScroll = () => setWindowTop(window!.top!.scrollY * 0.7)
+        if (!isTablet) {
+            const onScroll = () => setWindowTop(window!.top!.scrollY * 0.7)
 
-        window.removeEventListener('scroll', onScroll);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('scroll', onScroll);
+            window.addEventListener('scroll', onScroll, { passive: true });
+            return () => window.removeEventListener('scroll', onScroll);
+        }
     })
 
     return (
