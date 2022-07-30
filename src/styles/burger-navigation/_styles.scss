@@ -214,8 +214,17 @@
         }
         &.is-active {
             &::before {
-                transform: scale(100);
                 transition: transform var(--core-delay);
+                transform: scale(70);
+                @include susanoo.media(small) {
+                    transform: scale(40);
+                }
+                @include susanoo.media(large) {
+                    transform: scale(60);
+                }
+                @include susanoo.media(xxlarge, min) {
+                    transform: scale(100);
+                }
             }
             .content {
                 pointer-events: auto;
