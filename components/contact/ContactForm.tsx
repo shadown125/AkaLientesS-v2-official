@@ -11,7 +11,7 @@ import {useState} from "react";
 import {useTranslation} from "next-i18next";
 
 const ContactForm = () => {
-    const { t } = useTranslation('common')
+    const { t } = useTranslation()
     const { ref, inView } = useInView();
     const [notification, setNotification] = useState<string>('');
 
@@ -43,7 +43,7 @@ const ContactForm = () => {
     return (
         <>
             <div className={`notification notification--${notification}${notification && ' is-active'}`}>
-                {notification === 'successfully' ? 'Thank you for contacting me, I will answer you soon' : 'Something went wrong. Please try again later'}
+                {notification === 'successfully' ? t('home:sections.contact.success-message') : t('home:sections.contact.failed-message')}
             </div>
             <Formik initialValues={{name: '', email: '', subject: '', message: ''}} onSubmit={submitHandler} validationSchema={contact} >
                 {({ isSubmitting }) => (
@@ -63,7 +63,7 @@ const ContactForm = () => {
                             <MessageAreaField name="message" />
                         </div>
                         <button className="button" disabled={isSubmitting} type="submit">
-                            <span>{ t('submit') }</span>
+                            <span>{ t('common:submit') }</span>
                         </button>
                     </Form>
                 )}

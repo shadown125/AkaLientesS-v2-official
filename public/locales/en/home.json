@@ -54,6 +54,10 @@
       "content-react": "The largest React project I have created on my own.",
       "description-sus": "The most ambitious Project",
       "content-sus": "I really wanted to create something big. Something, I can develop over years."
+    },
+    "contact": {
+      "success-message": "Thank you for contacting me, I will answer you soon",
+      "failed-message": "Something went wrong. Please try again later"
     }
   },
   "validation": {
