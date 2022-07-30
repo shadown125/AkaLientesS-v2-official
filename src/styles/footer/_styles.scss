@@ -47,6 +47,21 @@
             direction: row;
         }
     }
+    .additional {
+        display: flex;
+        align-items: center;
+        gap: susanoo.rem-calc(20);
+        flex: {
+            direction: column;
+        }
+        @include susanoo.media(small) {
+            width: 100%;
+            flex: {
+                direction: row;
+            }
+            justify-content: space-evenly;
+        }
+    }
     .social-links {
         li {
             &::before {
