@@ -55,5 +55,12 @@
       "description-sus": "Najbardziej ambitny projekt",
       "content-sus": "Naprawdę chciałem stworzyć coś dużego. Coś, co będę mógł rozwijać przez lata."
     }
+  },
+  "validation": {
+    "valid-email": "E-Mail musi być poprawny",
+    "required-email": "Email jest wymaganym polem. Proszę wypełnić je, aby kontynuować.",
+    "required-subject": "Temat jest wymaganym polem. Proszę wypełnić je, aby kontynuować.",
+    "required-message": "Wiadomość jest wymaganym polem. Proszę wypełnić je, aby kontynuować.",
+    "min-message": "Wiadomość musi mieć co najmniej 10 znaków"
   }
 }

@@ -55,5 +55,12 @@
       "description-sus": "The most ambitious Project",
       "content-sus": "I really wanted to create something big. Something, I can develop over years."
     }
+  },
+  "validation": {
+    "valid-email": "E-Mail must be valid",
+    "required-email": "Email is required field. Please fill it to continue",
+    "required-subject": "Subject is required field. Please fill it to continue",
+    "required-message": "Message is required field. Please fill it to continue",
+    "min-message": "Message must have at least 10 characters"
   }
 }
