@@ -7,6 +7,7 @@ import {InitialLoadContext} from "../context/initialLoadContext";
 import navigationMouseMovement from "../../vanilla-js/NavigationMouseMovement";
 import {useTranslation} from "next-i18next";
 import {useRouter} from "next/router";
+import LanguageSwitch from "./LanguageSwitch";
 
 const Navigation = () => {
     const { t } = useTranslation()
@@ -76,22 +77,7 @@ const Navigation = () => {
                         ))}
                     </ul>
                     <div className="right-row">
-                        <ul className="languages">
-                            <li>
-                                <Link href="/" locale={'en'} >
-                                    <a className={router.locale === 'en' ? 'is-active' : ''}>
-                                        <span>EN</span>
-                                    </a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/" locale={'pl'} >
-                                    <a className={router.locale === 'pl' ? 'is-active' : ''}>
-                                        <span>PL</span>
-                                    </a>
-                                </Link>
-                            </li>
-                        </ul>
+                        <LanguageSwitch />
                         <Link href="#contact">
                             <a className='button'>
                                 <span>{t('common:contact-me')}</span>
