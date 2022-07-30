@@ -12,12 +12,15 @@ import InitialPageLoader from "../components/core/InitialPageLoader";
 import MouseTrailer from "../vanilla-js/MouseTrailer";
 import {useEffect} from "react";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useMediaQuery} from "react-responsive";
 
 const Home: NextPage = () => {
+    const isMobile = useMediaQuery({query: '(max-width: 40em)'})
+
     useEffect(() => {
         const mouseTrailerCanvas = document.getElementById('mouse-trailer') as HTMLCanvasElement
 
-        MouseTrailer(mouseTrailerCanvas)
+        !isMobile && MouseTrailer(mouseTrailerCanvas)
     })
 
   return (
