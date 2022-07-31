@@ -6,6 +6,9 @@ button {
     }
     border: unset;
     cursor: pointer;
+    &:focus {
+        outline: unset;
+    }
 }
 
 .button {
@@ -22,7 +25,6 @@ button {
     padding: susanoo.rem-calc(18) susanoo.rem-calc(30);
     &:hover,
     &:focus {
-        outline: unset;
         &::before {
             transform: skewX(0deg);
             left: 50%;
