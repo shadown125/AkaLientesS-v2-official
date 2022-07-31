@@ -16,7 +16,8 @@
     opacity: 0;
     a {
         padding: susanoo.rem-calc(6) susanoo.rem-calc(20);
-        &:hover {
+        &:hover,
+        &:focus {
             &::before {
                 background: {
                     color: var(--color-tertiary);
