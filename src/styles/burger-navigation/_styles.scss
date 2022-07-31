@@ -168,6 +168,7 @@
         }
         .spinner {
             position: absolute;
+            outline: none;
             &.is-active {
                 .path {
                     stroke-dashoffset: 0;
