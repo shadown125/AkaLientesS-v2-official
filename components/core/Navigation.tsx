@@ -2,7 +2,7 @@ import {useInView} from "react-intersection-observer";
 import {useContext, useEffect, useRef, useState} from "react";
 import Link from "next/link";
 import {links} from "../../content/NavigationData";
-import Image from "next/image";
+import Image from "next/future/image";
 import {InitialLoadContext} from "../context/initialLoadContext";
 import navigationMouseMovement from "../../vanilla-js/NavigationMouseMovement";
 import {useTranslation} from "next-i18next";
@@ -59,7 +59,7 @@ const Navigation = () => {
                 <nav ref={ref} className={`main-navigation${active() ? ' is-active' : ''}${windowTop === 0 && active() ? ' is-loaded' : ''}`}>
                     <Link href="/">
                         <a>
-                            <Image layout="fixed" width={80} height={80} src='/brandLogo.png' alt='brand-logo' />
+                            <Image width={80} height={80} src='/brandLogo.png' alt='brand-logo' />
                         </a>
                     </Link>
                     <ul className="nav-links">
