@@ -10,12 +10,18 @@ const ContentSecurityPolicy = `
   form-action 'self';
   frame-ancestors 'none';
   connect-src 'self' https://formspree.io/;
+  img-src 'self';
 `
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   i18n,
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
   async headers() {
     return [
       {
