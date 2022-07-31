@@ -1,12 +1,12 @@
 class NavigationMouseMovementModule {
-    private readonly navigation: HTMLElement
+    private readonly navigation: HTMLDivElement
     private readonly menu: HTMLUListElement | null
     private readonly menuItem: NodeListOf<HTMLLIElement>
 
     private windowWidth = window.innerWidth
     private windowHeight = window.innerHeight
 
-    constructor(element: HTMLElement) {
+    constructor(element: HTMLDivElement) {
         this.navigation = element
         this.menu = this.navigation.querySelector('ul')
         this.menuItem = this.menu!.querySelectorAll('li')
@@ -43,8 +43,10 @@ class NavigationMouseMovementModule {
     }
 }
 
-export default function navigationMouseMovement(element: HTMLElement): NavigationMouseMovementModule {
+export default function navigationMouseMovement(element: HTMLDivElement): NavigationMouseMovementModule | null {
     class NavigationMouseMovement extends NavigationMouseMovementModule {}
+
+    if (element === null) return null
 
     return new NavigationMouseMovement(element)
 }

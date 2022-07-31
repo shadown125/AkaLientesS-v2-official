@@ -1,5 +1,5 @@
 import {useInView} from "react-intersection-observer";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useEffect, useRef, useState} from "react";
 import Link from "next/link";
 import {links} from "../../content/NavigationData";
 import Image from "next/image";
@@ -7,10 +7,12 @@ import {InitialLoadContext} from "../context/initialLoadContext";
 import navigationMouseMovement from "../../vanilla-js/NavigationMouseMovement";
 import {useTranslation} from "next-i18next";
 import LanguageSwitch from "./LanguageSwitch";
+import {useMediaQuery} from "react-responsive";
 
 const Navigation = () => {
     const { t } = useTranslation()
     const {loadState} = useContext(InitialLoadContext)
+    const isTablet = useMediaQuery({query: '(max-width: 50em)'})
     const { ref, inView } = useInView({
         delay: 1000,
         triggerOnce: true
@@ -18,6 +20,7 @@ const Navigation = () => {
     const [windowTop, setWindowTop] = useState<number>(0)
     const [menu, setMenu] = useState<string>('')
     const [delayedActive, setDelayedActive] = useState<boolean>(false)
+    const burgerContainer = useRef<HTMLDivElement>(null)
 
     const active = () => inView && delayedActive
 
@@ -30,9 +33,7 @@ const Navigation = () => {
     }
 
     useEffect(() => {
-        const burgerContainer = document.getElementById('burger-navigation-container') as HTMLElement
-
-        navigationMouseMovement(burgerContainer);
+        !isTablet && navigationMouseMovement(burgerContainer.current!);
 
         const animationDelay = 2000
 
@@ -101,7 +102,7 @@ const Navigation = () => {
                             />
                         </svg>
                     </button>
-                    <div className={`container${menu}`} id="burger-navigation-container">
+                    <div ref={burgerContainer} className={`container${menu}`}>
                         <div className="content">
                             <ul data-offset="10">
                                 {links.map((item, index) => (
