@@ -51,7 +51,7 @@ const Navigation = () => {
             clearTimeout(delayActiveAnimation)
             window.removeEventListener('scroll', onScroll);
         }
-    }, [loadState])
+    }, [isTablet, loadState])
 
     return (
         <header className="section">
