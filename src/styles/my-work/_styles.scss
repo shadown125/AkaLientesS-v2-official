@@ -122,13 +122,19 @@
                 height: susanoo.rem-calc(400);
             }
         }
-        &:hover {
+        &:hover,
+        &:focus {
             .headline,
             span {
                 &:not(.counter) {
                     &:not(.counter + span) {
                         transform: scale(1.1);
                     }
+                }
+            }
+            .headline {
+                + span {
+                    color: white;
                 }
             }
             .counter {
