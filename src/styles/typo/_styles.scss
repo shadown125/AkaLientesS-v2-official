@@ -12,3 +12,10 @@ p {
         }
     }
 }
+
+span,
+p {
+    &::selection {
+        background: var(--color-tertiary)
+    }
+}

@@ -13,6 +13,9 @@ h6 {
         weight: normal;
     }
     transition: color 0.2s linear;
+    &::selection {
+        background: var(--color-tertiary)
+    }
 }
 
 .headline {

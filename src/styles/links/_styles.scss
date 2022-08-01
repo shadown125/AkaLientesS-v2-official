@@ -55,6 +55,9 @@ a {
             color: var(--color-tertiary);
         }
     }
+    &::selection {
+        background: var(--color-tertiary)
+    }
     &.icon {
         @include mixins.reset();
         font: {

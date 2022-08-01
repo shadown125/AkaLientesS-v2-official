@@ -50,6 +50,9 @@ textarea {
     &:focus-within {
         outline: unset;
     }
+    &::selection {
+        background: var(--color-tertiary)
+    }
 }
 
 textarea {
