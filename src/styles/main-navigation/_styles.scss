@@ -157,14 +157,18 @@
 
                     stroke-dasharray: 128px;
                     stroke-dashoffset: 128px;
+                    filter: drop-shadow(-0.03em 0 3px var(--color-tertiary));
                 }
                 &:nth-child(2) {
                     stroke-dasharray: 307px;
                     stroke-dashoffset: 307px;
+
+                    filter: drop-shadow(-0.03em 0 3px var(--color-secondary));
                 }
                 &:nth-child(3) {
                     --stroke-color: var(--color-secondary);
 
+                    filter: drop-shadow(-0.03em 0 3px var(--color-tertiary));
                     stroke-dasharray: 154px;
                     stroke-dashoffset: 154px;
                 }
