@@ -12,7 +12,7 @@
     --links-color: white;
 
     display: flex;
-    gap: susanoo.rem-calc(50);
+    gap: susanoo.rem-calc(40);
     padding: susanoo.rem-calc(36) 0;
     align-items: flex-start;
     opacity: 0;
@@ -83,6 +83,27 @@
                 }
             }
         }
+        .logo {
+            .path {
+                transition: fill 1s calc(var(--inital-animation-duration) + 1.25s) ease-in-out;
+                animation: line-animation 2s var(--inital-animation-duration) ease forwards;
+                &:first-child {
+                    --fill: var(--stroke-color);
+                }
+                &:nth-child(2) {
+                    --fill: var(--stroke-color);
+                }
+                &:nth-child(3) {
+                    --fill: var(--stroke-color);
+                }
+            }
+            g {
+                path {
+                    opacity: 0.87;
+                    transition: opacity 1s calc(var(--inital-animation-duration) + 1.25s) ease-in-out;
+                }
+            }
+        }
     }
     a {
         @include helpers.steroid-text(0.07em);
@@ -118,10 +139,41 @@
         }
     }
     .logo {
-        @include links.reset();
-        img {
-            min-width: susanoo.rem-calc(60);
-            min-height: susanoo.rem-calc(60);
+        color: transparent;
+        &:hover {
+            color: transparent;
+        }
+        svg {
+            height: susanoo.rem-calc(80);
+            .path {
+                --stroke-color: var(--color-tertiary);
+                --fill: transparent;
+
+                stroke-width: 2px;
+                stroke: var(--stroke-color);
+                fill: var(--fill);
+                &:first-child {
+                    --stroke-color: var(--color-secondary);
+
+                    stroke-dasharray: 128px;
+                    stroke-dashoffset: 128px;
+                }
+                &:nth-child(2) {
+                    stroke-dasharray: 307px;
+                    stroke-dashoffset: 307px;
+                }
+                &:nth-child(3) {
+                    --stroke-color: var(--color-secondary);
+
+                    stroke-dasharray: 154px;
+                    stroke-dashoffset: 154px;
+                }
+            }
+            g {
+                path {
+                    opacity: 0;
+                }
+            }
         }
     }
     ul {
