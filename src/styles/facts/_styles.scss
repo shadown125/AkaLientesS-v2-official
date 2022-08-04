@@ -36,9 +36,6 @@
                 img {
                     transform: translateY(0);
                 }
-                .curtains-canvas {
-                    opacity: 1;
-                }
                 .headline {
                     @include mask.mask($delay: 1s);
                 }
@@ -196,32 +193,6 @@
             letter-spacing: 4px;
             > span {
                 opacity: 0;
-            }
-        }
-        .curtains-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            @include susanoo.media(medium) {
-                display: none;
-            }
-        }
-        .image-plane {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            @include susanoo.media(medium, 'min') {
-                > span {
-                    display: none !important;
-                }
             }
         }
     }
