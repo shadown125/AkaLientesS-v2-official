@@ -43,7 +43,7 @@ For Production, you need to run the build script for styles:
 npm run style:build
 ```
 
-<h3 style="color:orange;">Note!! This Website is in build progress which does not reflect the final state. The current state of the Website is in Alpha (0.9.4v)</h3>
+<h3 style="color:orange;">Note!! This Website is in build progress which does not reflect the final state. The current state of the Website is in Alpha (0.9.5v)</h3>
 
 
 ## Learn More
