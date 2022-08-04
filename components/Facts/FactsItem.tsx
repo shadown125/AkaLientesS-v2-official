@@ -3,6 +3,9 @@ import {useInView} from "react-intersection-observer";
 import FactsItemKeys from "./FactsItemKeys";
 import {useTranslation} from "next-i18next";
 import Image from "next/image";
+import {MutableRefObject, useEffect, useRef} from "react";
+import animatedImages from "../../vanilla-js/AnimatedImages";
+import {useMediaQuery} from "react-responsive";
 
 const FactsItem = (props: props) => {
     const { t } = useTranslation()
@@ -10,11 +13,20 @@ const FactsItem = (props: props) => {
         delay: 500,
         triggerOnce: true
     });
+    const isTabletOrMobile = useMediaQuery({query: '(max-width: 50em)'})
+
+    const image = useRef<HTMLDivElement>(null) as MutableRefObject<HTMLDivElement>;
+    const canvas = useRef<HTMLCanvasElement>(null) as MutableRefObject<HTMLCanvasElement>;
+
+    useEffect(() => {
+        !isTabletOrMobile && animatedImages(image.current!, canvas.current!, props.image);
+    }, [props.image, isTabletOrMobile])
 
     return (
         <div ref={ref} className={`grid${inView ? ' is-active' : ''}`}>
-            <div className="image">
-                <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} />
+            <div ref={image} className="image">
+                <canvas ref={canvas}></canvas>
+                {isTabletOrMobile && <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} />}
                 <h3 className="headline h3">
                     <span>{ t(`home:sections.facts.${props.headline}`) }</span>
                 </h3>
