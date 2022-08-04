@@ -143,6 +143,14 @@
         &:hover {
             color: transparent;
         }
+        &:not(.button) {
+            > span {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                opacity: 0;
+            }
+        }
         svg {
             height: susanoo.rem-calc(80);
             .path {

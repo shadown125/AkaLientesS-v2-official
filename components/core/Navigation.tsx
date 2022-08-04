@@ -59,6 +59,7 @@ const Navigation = () => {
                 <nav ref={ref} className={`main-navigation${active() ? ' is-active' : ''}${windowTop === 0 && active() ? ' is-loaded' : ''}`}>
                     <Link href="/">
                         <a className="logo">
+                            <span>Logo</span>
                             <Logo />
                         </a>
                     </Link>
