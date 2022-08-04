@@ -1,6 +1,6 @@
 export const facts = [
     {
-        image: '/akaliBloodmoon3.png',
+        image: '/akaliBloodmoon3.webp',
         headline: 'competitive-player',
         text: "competitive-player-text",
         keys: [
@@ -19,7 +19,7 @@ export const facts = [
         ]
     },
     {
-        image: '/akaliBloodmoon2.jpg',
+        image: '/akaliBloodmoon2.webp',
         headline: 'sport',
         text: 'sport-text',
         keys: [
@@ -38,7 +38,7 @@ export const facts = [
         ]
     },
     {
-        image: '/akaliBloodmoon.jpg',
+        image: '/akaliBloodmoon.webp',
         headline: 'healthy-lifestyle',
         text: 'healthy-lifestyle-text',
         keys: [
