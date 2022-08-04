@@ -124,7 +124,6 @@ class AnimatedImagesModule {
             height: element.clientHeight,
             backgroundAlpha: 0,
             resolution: window.devicePixelRatio || 1,
-            resizeTo: window
         });
     }
 

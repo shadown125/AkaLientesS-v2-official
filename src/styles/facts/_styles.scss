@@ -141,13 +141,6 @@
 
         position: relative;
         height: susanoo.rem-calc(450);
-        canvas {
-            opacity: 0;
-            transition: opacity 1s 0.65s ease-in-out;
-            @include susanoo.media(medium) {
-                display: none;
-            }
-        }
         &::after {
             @include helpers.steroid-lines();
             content: '';
@@ -173,6 +166,19 @@
             }
             transform: translateY(-101%);
             opacity: 1;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s 0.65s ease-in-out;
+            @include susanoo.media(medium) {
+                display: none;
+            }
         }
         .headline {
             --color-headline: var(--color-tertiary);
@@ -202,6 +208,9 @@
         object-fit: cover;
         transform: translateY(-101%);
         transition: transform 0.6s 0.45s ease-out;
+        @include susanoo.media(medium, 'min') {
+            opacity: 0;
+        }
     }
     .content {
         @include grid.grid-item-extend();
