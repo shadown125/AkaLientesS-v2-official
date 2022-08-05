@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js'
 import {RGBSplitFilter} from '@pixi/filter-rgb-split';
 import '@pixi/filter-displacement';
+import type {AbstractRenderer} from "pixi.js";
 
 class AnimatedImagesModule {
     private element: HTMLDivElement;
@@ -11,6 +12,7 @@ class AnimatedImagesModule {
     private app;
     private container = new PIXI.Container();
     private spriteImage: PIXI.Sprite | undefined;
+    private renderer: AbstractRenderer | undefined;
 
     private options = {
         displacementImage: "/displacement.webp",
@@ -25,7 +27,7 @@ class AnimatedImagesModule {
         this.canvas = canvas;
         this.image = image;
 
-        this.app = AnimatedImagesModule.initialisePixi(element)
+        this.app = this.initialisePixi(element)
 
         this.init();
     }
@@ -39,13 +41,15 @@ class AnimatedImagesModule {
         this.canvasWidth = this.element.clientWidth;
         this.canvasHeight = this.element.clientHeight;
 
+        this.renderer = PIXI.autoDetectRenderer({antialias: false, transparent: false, resolution: 1, view: this.app.view});
+
         this.app.renderer.plugins.interaction.moveWhenInside = true;
         this.app.stage.interactive = true;
 
         this.app.stage.addChild(this.container);
         this.spriteImage = PIXI.Sprite.from(this.image);
 
-        AnimatedImagesModule.setImage(this.container, this.spriteImage, this.canvasWidth, this.canvasHeight);
+        this.setImage(this.container, this.spriteImage, this.canvasWidth, this.canvasHeight);
 
         const displacementSprite = PIXI.Sprite.from(this.options.displacementImage);
         displacementSprite.scale.set(this.options.displacementScale);
@@ -75,16 +79,17 @@ class AnimatedImagesModule {
         this.app.ticker.add(() => this.ticker(graphics, rgbRatio, rgbFilter, displacementSprite));
     }
 
-    private static setImage(container: PIXI.Container<PIXI.DisplayObject>, image: PIXI.Sprite, canvasWidth: number, canvasHeight: number) {
+    private setImage(container: PIXI.Container<PIXI.DisplayObject>, image: PIXI.Sprite, canvasWidth: number, canvasHeight: number) {
         container.removeChild();
         container.addChild(image);
 
         image.x = canvasWidth / 2;
         image.y = canvasHeight / 2;
         image.anchor.set(0.5);
-        image.scale.set(1);
-        image.width = canvasWidth - 10;
-        image.height = canvasHeight - 10;
+        image.scale.x = 0.75;
+        image.scale.y = 0.75;
+
+        this.renderer!.resize(canvasWidth, canvasHeight);
     }
 
     private graphics(canvasWidth: number, canvasHeight: number) {
@@ -118,12 +123,13 @@ class AnimatedImagesModule {
             displacementSprite.x = 0;
     }
 
-    private static initialisePixi (element: HTMLDivElement) {
+    private initialisePixi (element: HTMLDivElement) {
         return new PIXI.Application({
             width: element.clientWidth,
             height: element.clientHeight,
             backgroundAlpha: 0,
             resolution: window.devicePixelRatio || 1,
+            resizeTo: this.element
         });
     }
 
@@ -134,7 +140,7 @@ class AnimatedImagesModule {
         this.canvasWidth = this.element.clientWidth;
         this.canvasHeight = this.element.clientHeight;
 
-        AnimatedImagesModule.setImage(this.container, this.spriteImage!, this.canvasWidth, this.canvasHeight);
+        this.setImage(this.container, this.spriteImage!, this.canvasWidth, this.canvasHeight);
     }
 }
 
