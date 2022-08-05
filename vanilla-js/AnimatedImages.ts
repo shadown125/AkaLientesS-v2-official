@@ -41,7 +41,7 @@ class AnimatedImagesModule {
         this.canvasWidth = this.element.clientWidth;
         this.canvasHeight = this.element.clientHeight;
 
-        this.renderer = PIXI.autoDetectRenderer({antialias: false, transparent: false, resolution: 1, view: this.app.view});
+        this.renderer = PIXI.autoDetectRenderer({antialias: false, backgroundAlpha: 0, resolution: 1, view: this.app.view});
 
         this.app.renderer.plugins.interaction.moveWhenInside = true;
         this.app.stage.interactive = true;
