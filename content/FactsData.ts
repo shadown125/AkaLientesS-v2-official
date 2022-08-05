@@ -1,6 +1,6 @@
 export const facts = [
     {
-        image: '/akaliBloodmoon3.webp',
+        image: '/mikasa.webp',
         headline: 'competitive-player',
         text: "competitive-player-text",
         keys: [
