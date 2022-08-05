@@ -6,3 +6,9 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes line-animation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

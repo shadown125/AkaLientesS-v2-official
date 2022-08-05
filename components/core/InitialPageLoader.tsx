@@ -1,6 +1,14 @@
 import {useContext, useEffect, useState} from "react";
 import Progress from "../NProgress/Progress";
 import {InitialLoadContext} from "../context/initialLoadContext";
+import LetterA from "../letters/LetterA";
+import LetterK from "../letters/LetterK";
+import LetterL from "../letters/LetterL";
+import LetterI from "../letters/LetterI";
+import LetterE from "../letters/LetterE";
+import LetterN from "../letters/LetterN";
+import LetterT from "../letters/LetterT";
+import LetterS from "../letters/LetterS";
 
 const InitialPageLoader = () => {
     const [activeInitialLoaderSection, setActiveInitialLoaderSection] = useState<string>('')
@@ -26,12 +34,12 @@ const InitialPageLoader = () => {
         const secondPaintLoading = setTimeout(() => {
             setActiveLastPaint('')
             setActiveInitialLoaderSection(' is-active')
-        }, delay + 3000)
+        }, delay + 4500)
 
         const finishLoadingPaint = setTimeout(() => {
             setLoadState(true)
             body!.style.overflow = 'unset'
-        }, delay + 4000)
+        }, delay + 5250)
 
         return () => {
             clearTimeout(progressLoadingAnimation)
@@ -56,9 +64,17 @@ const InitialPageLoader = () => {
                                           isFinished={progressLoaderState} progress={0} incrementDuration={90}  />
                             </div>
                             <div className={`last-paint${activeLastPaint}`}>
-                                <h1 className="headline h1">
-                                    <span>AKALIENTESS</span>
-                                </h1>
+                                <LetterA />
+                                <LetterK />
+                                <LetterA />
+                                <LetterL />
+                                <LetterI />
+                                <LetterE />
+                                <LetterN />
+                                <LetterT />
+                                <LetterE />
+                                <LetterS />
+                                <LetterS />
                             </div>
                         </div>
                     </div>

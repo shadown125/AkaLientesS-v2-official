@@ -31,24 +31,132 @@
         }
     }
     .last-paint {
+        display: flex;
+        gap: susanoo.rem-calc(8);
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
-        transition: opacity 0.5s 0.75s linear;
+        transition: opacity 0.5s 0.5s linear;
         &.is-active {
             opacity: 1;
+            svg {
+                opacity: 1;
+                path {
+                    --fill: white;
+                    --animation-duration: 0.75s;
+
+                    transform-origin: center;
+                    animation: line-animation 2s 1s ease forwards;
+                    &.a {
+                        transform: scale(0);
+                        transition: fill 1s 2s ease-in-out, transform var(--animation-duration) 3.25s linear;
+                    }
+                    &.k {
+                        transform: scale(0);
+                        transition: fill 1s 2s ease-in-out, transform var(--animation-duration) 3.5s linear;
+                    }
+                    &.l {
+                        transform: scale(0);
+                        transition: fill 1s 2s ease-in-out, transform var(--animation-duration) 3.25s linear;
+                    }
+                    &.i {
+                        transform: scale(0);
+                        transition: fill 1s 2s ease-in-out, transform var(--animation-duration) 3.5s linear;
+                    }
+                    &.e {
+                        transform: scale(0);
+                        transition: fill 1s 2s ease-in-out, transform var(--animation-duration) 3.65s linear;
+                    }
+                    &.n {
+                        transform: scale(0);
+                        transition: fill 1s 2s ease-in-out, transform var(--animation-duration) 3.35s linear;
+                    }
+                    &.t {
+                        transform: scale(0);
+                        transition: fill 1s 2s ease-in-out, transform var(--animation-duration) 3.65s linear;
+                    }
+                    &.s {
+                        transform: scale(0);
+                        transition: fill 1s 2s ease-in-out, transform var(--animation-duration) 3.25s linear;
+                    }
+                }
+            }
         }
-        .headline {
-            font: {
-                family: 'Tapestry', sans-serif;
+        svg {
+            --viewport: 6vw;
+
+            min-width: clamp(#{susanoo.rem-calc(20)}, var(--viewport), #{susanoo.rem-calc(70)});
+            min-height: clamp(#{susanoo.rem-calc(10)}, var(--viewport), #{susanoo.rem-calc(60)});
+            &.n {
+                --viewport: 7vw;
+
+                min-width: clamp(#{susanoo.rem-calc(35)}, var(--viewport), #{susanoo.rem-calc(90)});
+                min-height: clamp(#{susanoo.rem-calc(20)}, var(--viewport), #{susanoo.rem-calc(70)});
             }
-            color: white;
-            text: {
-                shadow: -0.05em 0 1px rgb(255 0 0 / 87%), 0.05em 0 1px rgb(0 255 255 / 87%)
+            &.l {
+                --viewport: 5vw;
             }
-            letter-spacing: susanoo.rem-calc(6);
+            &.i {
+                --viewport: 4.7vw;
+            }
+            &.e {
+                --viewport: 5vw;
+            }
+            &.t {
+                --viewport: 5vw;
+            }
+            &.s {
+                --viewport: 5vw;
+            }
+            path {
+                --stroke-color: var(--color-tertiary);
+                --fill: transparent;
+
+                stroke-width: 2px;
+                stroke: var(--stroke-color);
+                fill: var(--fill);
+                filter: drop-shadow(0.20em 0 1px var(--color-tertiary));
+                &.a {
+                    --stroke-color: var(--color-secondary);
+
+                    stroke-dasharray: 442px;
+                    stroke-dashoffset: 442px;
+                }
+                &.e {
+                    stroke-dasharray: 414px;
+                    stroke-dashoffset: 414px
+                }
+                &.i {
+                    stroke-dasharray: 258px;
+                    stroke-dashoffset: 258px
+                }
+                &.k {
+                    stroke-dasharray: 484px;
+                    stroke-dashoffset: 484px
+                }
+                &.l {
+                    stroke-dasharray: 311px;
+                    stroke-dashoffset: 311px
+                }
+                &.n {
+                    --stroke-color: var(--color-secondary);
+
+                    stroke-dasharray: 488px;
+                    stroke-dashoffset: 488px
+                }
+                &.s {
+                    --stroke-color: var(--color-secondary);
+
+                    stroke-dasharray: 358px;
+                    stroke-dashoffset: 358px
+                }
+                &.t {
+                    stroke-dasharray: 332px;
+                    stroke-dashoffset: 332px
+                }
+            }
         }
     }
     .loader {
