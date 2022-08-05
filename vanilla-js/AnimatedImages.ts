@@ -4,7 +4,7 @@ import '@pixi/filter-displacement';
 import type {AbstractRenderer} from "pixi.js";
 
 class AnimatedImagesModule {
-    private element: HTMLDivElement;
+    private readonly element: HTMLDivElement;
     private canvas: HTMLCanvasElement;
     private canvasWidth: number | undefined;
     private canvasHeight: number | undefined;
