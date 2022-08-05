@@ -87,13 +87,13 @@
         svg {
             --viewport: 6vw;
 
-            min-width: clamp(#{susanoo.rem-calc(20)}, var(--viewport), #{susanoo.rem-calc(70)});
-            min-height: clamp(#{susanoo.rem-calc(10)}, var(--viewport), #{susanoo.rem-calc(60)});
+            min-width: clamp(#{susanoo.rem-calc(25)}, var(--viewport), #{susanoo.rem-calc(70)});
+            min-height: clamp(#{susanoo.rem-calc(35)}, var(--viewport), #{susanoo.rem-calc(60)});
             &.n {
                 --viewport: 7vw;
 
                 min-width: clamp(#{susanoo.rem-calc(35)}, var(--viewport), #{susanoo.rem-calc(90)});
-                min-height: clamp(#{susanoo.rem-calc(20)}, var(--viewport), #{susanoo.rem-calc(70)});
+                min-height: clamp(#{susanoo.rem-calc(30)}, var(--viewport), #{susanoo.rem-calc(70)});
             }
             &.l {
                 --viewport: 5vw;
