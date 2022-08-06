@@ -14,7 +14,11 @@ const Skills = () => {
         <section ref={ref} id="skills" className={`skills${inView ? ' is-active' : ''}`}>
             <div className="wrapper">
                 <h2 className="title title--skills h2">
-                    <span>{ t('navigation.skills') }</span>
+                    <span>
+                        <span>{ t('navigation.skills') }</span>
+                        { t('navigation.skills') }
+                        <span>{ t('navigation.skills') }</span>
+                    </span>
                 </h2>
                 <ul className="skills-list">
                     {skills.map((item, index) => (

@@ -32,8 +32,12 @@ const FactsItem = (props: props) => {
                 </h3>
             </div>
             <div className="content">
-                <h4 className="headline h4">
-                    <span>{ `${t('common:fact')} ${props.index + 1}` }</span>
+                <h4 className="title h4">
+                    <span>
+                        <span>{ `${t('common:fact')} ${props.index + 1}` }</span>
+                        { `${t('common:fact')} ${props.index + 1}` }
+                        <span>{ `${t('common:fact')} ${props.index + 1}` }</span>
+                    </span>
                 </h4>
                 <div className="description">
                     <p>

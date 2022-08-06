@@ -10,7 +10,11 @@ const Contact = () => {
         <section ref={ref} id="contact" className={`contact${ inView ? ' is-active' : ''}`}>
             <div className="wrapper">
                 <h2 className="title h2">
-                    <span> { t('contact') }</span>
+                    <span>
+                        <span>{ t('contact') }</span>
+                        { t('contact') }
+                        <span>{ t('contact') }</span>
+                    </span>
                 </h2>
                 <div className="inner-wrapper">
                     <ContactForm />

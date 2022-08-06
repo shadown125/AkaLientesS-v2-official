@@ -11,7 +11,11 @@ const SkillsFrameworks = () => {
     return (
         <div ref={ref} className={`frameworks${ inView ? ' is-active' : ''}`}>
             <h3 className="title title--frameworks h2">
-                <span>{ t('sections.frameworks-and-libraries') }</span>
+                <span>
+                    <span>{ t('sections.frameworks-and-libraries') }</span>
+                    { t('sections.frameworks-and-libraries') }
+                    <span>{ t('sections.frameworks-and-libraries') }</span>
+                </span>
             </h3>
             <ul>
                 <SkillsFrameworksItem />

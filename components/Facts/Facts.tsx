@@ -13,7 +13,11 @@ const Facts = () => {
          <section ref={ref} id="facts" className={`facts${inView ? ' loaded is-active' : ''}`}>
              <div className="wrapper">
                  <h2 className="h2 headline title">
-                     <span>{t('navigation.facts')}</span>
+                     <span>
+                         <span>{t('navigation.facts')}</span>
+                         {t('navigation.facts')}
+                         <span>{t('navigation.facts')}</span>
+                     </span>
                  </h2>
                  <ul className="facts-list">
                      {facts.map((item, index) => (

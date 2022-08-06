@@ -9,12 +9,15 @@ const MyWork = () => {
         triggerOnce: true,
     });
 
-
     return (
         <section ref={ref} id="my-work" className={`my-work${ inView ? ' is-active' : ''}`}>
             <div className="wrapper">
                 <h2 className="title h2">
-                    <span>{ t('navigation.my-work') }</span>
+                    <span>
+                        <span>{ t('navigation.my-work') }</span>
+                        { t('navigation.my-work') }
+                        <span>{ t('navigation.my-work') }</span>
+                    </span>
                 </h2>
                 <ul>
                     {projects.map((item, index) => (
