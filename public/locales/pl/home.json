@@ -53,7 +53,9 @@
       "description-react": "Największy projekt w React",
       "content-react": "Największy projekt React, który stworzyłem samodzielnie.",
       "description-sus": "Najbardziej ambitny projekt",
-      "content-sus": "Naprawdę chciałem stworzyć coś dużego. Coś, co będę mógł rozwijać przez lata."
+      "content-sus": "Naprawdę chciałem stworzyć coś dużego. Coś, co będę mógł rozwijać przez lata.",
+      "description-chykara": "Aplikacja na Androida i iOS do Treningów",
+      "content-chykara": "Aplikacja treningowa na Android i iOS, która pomoże Ci zapisać postępy ciężarów i powtórzeń w każdym treningu."
     },
     "contact": {
       "success-message": "Dziękuję za kontakt, wkrótce odpowiem.",
