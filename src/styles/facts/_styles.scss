@@ -49,6 +49,7 @@
                 }
                 .headline {
                     @include mask.mask();
+                    @include helpers.glitch();
                 }
                 .description {
                     &::before {
