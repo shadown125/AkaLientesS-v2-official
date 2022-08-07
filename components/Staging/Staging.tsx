@@ -1,11 +1,11 @@
 import { useInView } from "react-intersection-observer";
 import SocialLinks from "../../elements/SocialLinks";
 import Typewriter from "../helpers/Typewriter";
-import baffle from "../Baffle/baffle";
 import { useContext, useEffect, useState } from "react";
 import { InitialLoadContext } from "../context/initialLoadContext";
 import { useTranslation } from "next-i18next";
 import { useMediaQuery } from "react-responsive";
+import baffle from "../../vanilla-js/baffle/Baffle";
 
 const Staging = () => {
     const isSmallScreen = useMediaQuery({ query: "(max-width: 75em)" });
@@ -27,13 +27,14 @@ const Staging = () => {
 
         const baffleTimeout = setTimeout(() => {
             if (delayedActive && !isSmallScreen) {
-                baffle(".author")
+                baffle(".author")!
                     .set({
                         characters: "░░▓ ▒▒/▒░ ░██░▒ █░> ██░▓░ █░░▒ ▓>/ ██▓▓ ▓>░/",
                         speed: 50,
                     })
                     .start()
-                    .reveal(3000);
+                    .reveal(3000)
+                    .stop();
             }
         }, animationDelay / 2);
 
