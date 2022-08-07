@@ -1,5 +1,5 @@
 import { each, extend, getElements } from "./utils";
-import Obfuscator from "./obfuscator";
+import Obfuscator from "./Obfuscator";
 
 class BaffleModule {
     private readonly elements: any;
