@@ -23,13 +23,13 @@
             }
             &--left {
                 position: relative;
-               &::before {
-                   --animation-name: mask-left;
+                &::before {
+                    --animation-name: mask-left;
 
-                   background: {
-                       color: var(--color-tertiary);
-                   }
-               }
+                    background: {
+                        color: var(--color-tertiary);
+                    }
+                }
             }
             &--right {
                 position: relative;
@@ -66,7 +66,7 @@
             @include helpers.steroid-text(0.04em);
 
             font: {
-                family: "Noto Sans Japan";
+                family: 'Noto Sans Japan';
                 size: susanoo.rem-calc(40);
                 weight: 900;
             }

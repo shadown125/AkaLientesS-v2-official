@@ -1,14 +1,14 @@
-import {withNProgress} from "@tanem/react-nprogress";
-import {FC} from "react";
+import { withNProgress } from "@tanem/react-nprogress";
+import { FC } from "react";
 import Container from "./Container";
 import Bar from "./Bar";
 
 const Progress: FC<{
-    animationDuration: number
-    isFinished: boolean
-    progress: number,
-    minimum: number,
-    incrementDuration: number
+    animationDuration: number;
+    isFinished: boolean;
+    progress: number;
+    minimum: number;
+    incrementDuration: number;
 }> = ({ isFinished, progress, animationDuration, minimum, incrementDuration }) => {
     return (
         <div id="progression" className="section progression">
@@ -17,7 +17,7 @@ const Progress: FC<{
                 <Bar animationDuration={animationDuration} progress={progress} />
             </Container>
         </div>
-    )
-}
+    );
+};
 
-export default withNProgress(Progress)
+export default withNProgress(Progress);

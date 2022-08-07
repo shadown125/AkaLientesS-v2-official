@@ -1,11 +1,11 @@
 {
-  "created-by": "Created and Designed by Dawid Oleksiuk",
-  "contact" : "Contact",
-  "contact-me": "Contact me",
-  "fact": "Fact",
-  "submit": "Submit",
-  "name": "Name",
-  "subject": "Subject",
-  "message": "Message",
-  "credits": "All rights reserved by Dawid Oleksiuk"
+    "created-by": "Created and Designed by Dawid Oleksiuk",
+    "contact": "Contact",
+    "contact-me": "Contact me",
+    "fact": "Fact",
+    "submit": "Submit",
+    "name": "Name",
+    "subject": "Subject",
+    "message": "Message",
+    "credits": "All rights reserved by Dawid Oleksiuk"
 }

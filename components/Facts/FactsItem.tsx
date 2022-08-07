@@ -1,53 +1,51 @@
-import {props} from "../../types/FactsTypes";
-import {useInView} from "react-intersection-observer";
+import { props } from "../../types/FactsTypes";
+import { useInView } from "react-intersection-observer";
 import FactsItemKeys from "./FactsItemKeys";
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
-import {MutableRefObject, useEffect, useRef} from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 import animatedImages from "../../vanilla-js/AnimatedImages";
-import {useMediaQuery} from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 
 const FactsItem = (props: props) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
     const { ref, inView } = useInView({
         delay: 500,
-        triggerOnce: true
+        triggerOnce: true,
     });
-    const isTabletOrMobile = useMediaQuery({query: '(max-width: 50em)'})
+    const isTabletOrMobile = useMediaQuery({ query: "(max-width: 50em)" });
 
     const image = useRef<HTMLDivElement>(null) as MutableRefObject<HTMLDivElement>;
     const canvas = useRef<HTMLCanvasElement>(null) as MutableRefObject<HTMLCanvasElement>;
 
     useEffect(() => {
         !isTabletOrMobile && animatedImages(image.current!, canvas.current!, props.image);
-    }, [props.image, isTabletOrMobile])
+    }, [props.image, isTabletOrMobile]);
 
     return (
-        <div ref={ref} className={`grid${inView ? ' is-active' : ''}`}>
+        <div ref={ref} className={`grid${inView ? " is-active" : ""}`}>
             <div ref={image} className="image">
                 <canvas ref={canvas}></canvas>
                 {isTabletOrMobile && <Image priority={true} layout={"fill"} src={props.image} alt={props.headline} />}
                 <h3 className="headline h3">
-                    <span>{ t(`home:sections.facts.${props.headline}`) }</span>
+                    <span>{t(`home:sections.facts.${props.headline}`)}</span>
                 </h3>
             </div>
             <div className="content">
                 <h4 className="title h4">
                     <span>
-                        <span>{ `${t('common:fact')} ${props.index + 1}` }</span>
-                        { `${t('common:fact')} ${props.index + 1}` }
-                        <span>{ `${t('common:fact')} ${props.index + 1}` }</span>
+                        <span>{`${t("common:fact")} ${props.index + 1}`}</span>
+                        {`${t("common:fact")} ${props.index + 1}`}
+                        <span>{`${t("common:fact")} ${props.index + 1}`}</span>
                     </span>
                 </h4>
                 <div className="description">
-                    <p>
-                        { t(`home:sections.facts.${props.text}`, {joinArrays: ''})}
-                    </p>
+                    <p>{t(`home:sections.facts.${props.text}`, { joinArrays: "" })}</p>
                 </div>
             </div>
             <FactsItemKeys keys={props.keys} />
         </div>
-    )
-}
+    );
+};
 
-export default FactsItem
+export default FactsItem;

@@ -1,10 +1,10 @@
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import {InitialLoadContext} from "../context/initialLoadContext";
-import {useContext} from "react";
+import { InitialLoadContext } from "../context/initialLoadContext";
+import { useContext } from "react";
 
 const TsParticles = () => {
-    const {loadState} = useContext(InitialLoadContext)
+    const { loadState } = useContext(InitialLoadContext);
 
     const options = {
         interactivity: {
@@ -24,10 +24,10 @@ const TsParticles = () => {
         },
         particles: {
             color: {
-                value: ['FF0000DD', '00FFFFDD'],
+                value: ["FF0000DD", "00FFFFDD"],
             },
             links: {
-                color: 'FF0000DD',
+                color: "FF0000DD",
                 distance: 40,
                 enable: true,
                 width: 1,
@@ -50,7 +50,7 @@ const TsParticles = () => {
                 value: {
                     min: 0.1,
                     max: 0.6,
-                }
+                },
             },
             shape: {
                 type: "circle",
@@ -60,11 +60,9 @@ const TsParticles = () => {
             },
         },
         detectRetina: true,
-    }
+    };
 
-    return (
-        <Particles id="tsparticles" className={`particle${loadState ? ' is-active' : ''}`} init={loadFull} options={options} />
-    )
-}
+    return <Particles id="tsparticles" className={`particle${loadState ? " is-active" : ""}`} init={loadFull} options={options} />;
+};
 
-export default TsParticles
+export default TsParticles;

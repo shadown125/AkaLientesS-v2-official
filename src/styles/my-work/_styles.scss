@@ -205,7 +205,8 @@
         overflow: hidden;
         opacity: 0;
         z-index: 4;
-        transition: transform 0.15s calc(var(--animation-delay)) linear, top var(--base-animation-duration) calc(var(--animation-duration) + var(--animation-initial)), opacity var(--base-animation-duration) calc(var(--animation-duration) + var(--animation-initial));
+        transition: transform 0.15s calc(var(--animation-delay)) linear, top var(--base-animation-duration) calc(var(--animation-duration) + var(--animation-initial)),
+            opacity var(--base-animation-duration) calc(var(--animation-duration) + var(--animation-initial));
         &::before {
             content: attr(data-text);
             position: absolute;

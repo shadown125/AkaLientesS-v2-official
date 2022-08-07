@@ -1,13 +1,13 @@
 module.exports = {
     plugins:
-        process.env.NODE_ENV === 'production'
+        process.env.NODE_ENV === "production"
             ? {
-                autoprefixer: {},
-                'postcss-csso': {
-                    restructure: false
-                }
-            }
+                  autoprefixer: {},
+                  "postcss-csso": {
+                      restructure: false,
+                  },
+              }
             : {
-                autoprefixer: {}
-            }
-}
+                  autoprefixer: {},
+              },
+};

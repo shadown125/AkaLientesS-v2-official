@@ -1,7 +1,7 @@
-import * as PIXI from 'pixi.js'
-import {RGBSplitFilter} from '@pixi/filter-rgb-split';
-import '@pixi/filter-displacement';
-import type {AbstractRenderer} from "pixi.js";
+import * as PIXI from "pixi.js";
+import { RGBSplitFilter } from "@pixi/filter-rgb-split";
+import "@pixi/filter-displacement";
+import type { AbstractRenderer } from "pixi.js";
 
 class AnimatedImagesModule {
     private readonly element: HTMLDivElement;
@@ -20,28 +20,28 @@ class AnimatedImagesModule {
         speed: 1.3,
         intensityX: 1.75,
         intensityY: 1.75,
-    }
+    };
 
     constructor(element: HTMLDivElement, canvas: HTMLCanvasElement, image: string) {
         this.element = element;
         this.canvas = canvas;
         this.image = image;
 
-        this.app = this.initialisePixi(element)
+        this.app = this.initialisePixi(element);
 
         this.init();
     }
 
-    private init () {
+    private init() {
         PIXI.utils.skipHello();
 
-        window.addEventListener('resize', this.resizeImages.bind(this), {passive: true});
+        window.addEventListener("resize", this.resizeImages.bind(this), { passive: true });
         this.canvas.replaceWith(this.app.view);
 
         this.canvasWidth = this.element.clientWidth;
         this.canvasHeight = this.element.clientHeight;
 
-        this.renderer = PIXI.autoDetectRenderer({antialias: false, backgroundAlpha: 0, resolution: 1, view: this.app.view});
+        this.renderer = PIXI.autoDetectRenderer({ antialias: false, backgroundAlpha: 0, resolution: 1, view: this.app.view });
 
         this.app.renderer.plugins.interaction.moveWhenInside = true;
         this.app.stage.interactive = true;
@@ -59,9 +59,7 @@ class AnimatedImagesModule {
 
         const graphics = this.graphics(this.canvasWidth, this.canvasHeight);
 
-        const displacementFilter = new PIXI.filters.DisplacementFilter(
-            displacementSprite
-        );
+        const displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
         displacementFilter.padding = 20;
 
         const rgbFilter = new RGBSplitFilter();
@@ -119,21 +117,20 @@ class AnimatedImagesModule {
         });
 
         displacementSprite.x += this.options.speed;
-        if (displacementSprite.x > displacementSprite.width)
-            displacementSprite.x = 0;
+        if (displacementSprite.x > displacementSprite.width) displacementSprite.x = 0;
     }
 
-    private initialisePixi (element: HTMLDivElement) {
+    private initialisePixi(element: HTMLDivElement) {
         return new PIXI.Application({
             width: element.clientWidth,
             height: element.clientHeight,
             backgroundAlpha: 0,
             resolution: window.devicePixelRatio || 1,
-            resizeTo: this.element
+            resizeTo: this.element,
         });
     }
 
-    private resizeImages () {
+    private resizeImages() {
         this.app.view.width = this.element.clientWidth;
         this.app.view.height = this.element.clientHeight;
 

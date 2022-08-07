@@ -1,8 +1,8 @@
 export type skillsItemProps = {
-    name: string,
-    points: number,
+    name: string;
+    points: number;
     keys: {
-        head: string,
-        name: string
-    }[]
-}
+        head: string;
+        name: string;
+    }[];
+};

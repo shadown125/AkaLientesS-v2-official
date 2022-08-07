@@ -12,10 +12,10 @@ a {
         decoration: none;
     }
     color: white;
-    transition: color .2s linear, background-color .2s ease-in-out;
+    transition: color 0.2s linear, background-color 0.2s ease-in-out;
     > span {
         color: white;
-        transition: color .2s linear;
+        transition: color 0.2s linear;
     }
     &:hover,
     &:focus {
@@ -36,7 +36,7 @@ a {
     &::before,
     &::after {
         @include helpers.steroid-lines();
-        content: "";
+        content: '';
         position: absolute;
         bottom: var(--line-offset);
         width: 0;
@@ -56,12 +56,12 @@ a {
         }
     }
     &::selection {
-        background: var(--color-tertiary)
+        background: var(--color-tertiary);
     }
     &.icon {
         @include mixins.reset();
         font: {
-            size: clamp(#{susanoo.rem-calc(30)}, 2vw, #{susanoo.rem-calc(48)})
+            size: clamp(#{susanoo.rem-calc(30)}, 2vw, #{susanoo.rem-calc(48)});
         }
         width: clamp(#{susanoo.rem-calc(30)}, 2vw, #{susanoo.rem-calc(48)});
         &:hover,
@@ -89,7 +89,7 @@ a {
             left: 0;
             opacity: 0;
             font: {
-                size: susanoo.rem-calc(10)
+                size: susanoo.rem-calc(10);
             }
         }
         &.github {

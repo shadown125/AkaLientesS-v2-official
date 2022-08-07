@@ -1,9 +1,7 @@
 @use '../susanoo';
 @use 'variables';
 
-@mixin grid (
-    $column: #{variables.$grid-columns}
-) {
+@mixin grid($column: #{variables.$grid-columns}) {
     display: grid;
     grid: {
         template: {
@@ -12,10 +10,7 @@
     }
 }
 
-@mixin grid-centered (
-    $column: #{variables.$grid-columns},
-    $height: 100vh,
-) {
+@mixin grid-centered($column: #{variables.$grid-columns}, $height: 100vh) {
     display: grid;
     justify-content: center;
     align-content: center;
@@ -53,12 +48,12 @@
     }
     @include susanoo.media(medium) {
         grid: {
-            column: var(--column-start-medium, var(--column-start)) /  span var(--column-medium, var(--columns));
+            column: var(--column-start-medium, var(--column-start)) / span var(--column-medium, var(--columns));
         }
     }
     @include susanoo.media(large) {
         grid: {
-            column: var(--column-start-large, var(--column-start-medium, var(--column-start))) /  span var(--column-large, var(--column-medium, var(--columns)));
+            column: var(--column-start-large, var(--column-start-medium, var(--column-start))) / span var(--column-large, var(--column-medium, var(--columns)));
         }
     }
 }

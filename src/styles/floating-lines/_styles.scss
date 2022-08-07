@@ -17,7 +17,7 @@
             right: {
                 color: var(--line-color);
                 style: solid;
-                width: 2px
+                width: 2px;
             }
         }
         transition: height var(--floating-lines-animation-time) var(--line-animation-delay) linear;
@@ -39,7 +39,7 @@
                 left: {
                     color: var(--line-color);
                     style: solid;
-                    width: 2px
+                    width: 2px;
                 }
             }
         }

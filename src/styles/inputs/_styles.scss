@@ -24,7 +24,7 @@
         left: 0;
         height: 2px;
         background: {
-            color: var(--color-secondary)
+            color: var(--color-secondary);
         }
         transition: width 0.25s linear;
     }
@@ -51,7 +51,7 @@ textarea {
         outline: unset;
     }
     &::selection {
-        background: var(--color-tertiary)
+        background: var(--color-tertiary);
     }
 }
 

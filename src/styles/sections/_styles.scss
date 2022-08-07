@@ -5,7 +5,7 @@ section,
     --padding: #{susanoo.rem-calc(32)};
     --padding-multiply: 2;
 
-    padding: calc(var(--padding) * var(--padding-multiply))  calc(var(--padding) + #{susanoo.rem-calc(8)});
+    padding: calc(var(--padding) * var(--padding-multiply)) calc(var(--padding) + #{susanoo.rem-calc(8)});
     @media only screen and (max-width: 640px) {
         padding: calc((var(--padding) * var(--padding-multiply)) - #{susanoo.rem-calc(8)}) calc(var(--padding) - #{susanoo.rem-calc(8)});
     }

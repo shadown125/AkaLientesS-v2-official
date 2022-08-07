@@ -16,6 +16,6 @@ p {
 span,
 p {
     &::selection {
-        background: var(--color-tertiary)
+        background: var(--color-tertiary);
     }
 }

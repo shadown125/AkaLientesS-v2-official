@@ -15,25 +15,25 @@
             }
             a {
                 opacity: 1;
-                transition: opacity 0s .75s;
+                transition: opacity 0s 0.75s;
             }
         }
     }
     .credits {
         @include helpers.steroid-text();
         font: {
-            family: "Alex Brush";
-            size: clamp(#{susanoo.rem-calc(30)}, 6vw, #{susanoo.rem-calc(34)})
+            family: 'Alex Brush';
+            size: clamp(#{susanoo.rem-calc(30)}, 6vw, #{susanoo.rem-calc(34)});
         }
         opacity: 0;
         transform: translateY(100%);
-        transition: opacity 1s linear, transform .4s linear;
+        transition: opacity 1s linear, transform 0.4s linear;
     }
     .container {
         display: flex;
         justify-content: space-between;
         gap: susanoo.rem-calc(20);
-        opacity: .9;
+        opacity: 0.9;
         @include susanoo.media(small) {
             justify-content: center;
             align-items: center;

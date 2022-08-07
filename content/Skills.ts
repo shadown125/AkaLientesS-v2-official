@@ -1,93 +1,93 @@
 export const skills = [
     {
-        name: 'html',
+        name: "html",
         points: 11,
         keys: [
             {
-                head: '構造',
-                name: 'structure'
+                head: "構造",
+                name: "structure",
             },
             {
-                head: '建築',
-                name: 'architecture'
+                head: "建築",
+                name: "architecture",
             },
             {
-                head: '盤',
-                name: 'grid'
-            }
-        ]
+                head: "盤",
+                name: "grid",
+            },
+        ],
     },
     {
-        name: 'css',
+        name: "css",
         points: 12,
         keys: [
             {
-                head: '美しさ',
-                name: 'beauty'
+                head: "美しさ",
+                name: "beauty",
             },
             {
-                head: 'アニメ',
-                name: 'animations'
+                head: "アニメ",
+                name: "animations",
             },
             {
-                head: 'カスケード',
-                name: 'cascade'
-            }
-        ]
+                head: "カスケード",
+                name: "cascade",
+            },
+        ],
     },
     {
-        name: 'js',
+        name: "js",
         points: 11,
         keys: [
             {
-                head: 'すべて',
-                name: 'everything'
+                head: "すべて",
+                name: "everything",
             },
             {
-                head: '効果',
-                name: 'effects'
+                head: "効果",
+                name: "effects",
             },
             {
-                head: 'V8エンジン',
-                name: 'v8-engine'
-            }
-        ]
+                head: "V8エンジン",
+                name: "v8-engine",
+            },
+        ],
     },
     {
-        name: 'dart',
+        name: "dart",
         points: 10,
         keys: [
             {
-                head: 'ダーティー',
-                name: 'dirty'
+                head: "ダーティー",
+                name: "dirty",
             },
             {
-                head: 'すべて1つで',
-                name: 'all-in-one'
+                head: "すべて1つで",
+                name: "all-in-one",
             },
             {
-                head: 'グーグル',
-                name: 'google'
-            }
-        ]
-    }
-]
+                head: "グーグル",
+                name: "google",
+            },
+        ],
+    },
+];
 
 export const frameworks = [
     {
-        name: 'React',
-        points: 3
+        name: "React",
+        points: 3,
     },
     {
-        name: 'Next',
-        points: 3
+        name: "Next",
+        points: 3,
     },
     {
-        name: 'Vue',
-        points: 3
+        name: "Vue",
+        points: 3,
     },
     {
-        name: 'Flutter',
-        points: 3
-    }
-]
+        name: "Flutter",
+        points: 3,
+    },
+];

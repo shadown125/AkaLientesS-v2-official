@@ -1,22 +1,22 @@
-import {useInView} from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 import MyWorkItem from "./MyWorkItem";
-import {projects} from "../../content/MyWorkData";
+import { projects } from "../../content/MyWorkData";
 import { useTranslation } from "next-i18next";
 
 const MyWork = () => {
-    const { t } = useTranslation('home')
+    const { t } = useTranslation("home");
     const { ref, inView } = useInView({
         triggerOnce: true,
     });
 
     return (
-        <section ref={ref} id="my-work" className={`my-work${ inView ? ' is-active' : ''}`}>
+        <section ref={ref} id="my-work" className={`my-work${inView ? " is-active" : ""}`}>
             <div className="wrapper">
                 <h2 className="title h2">
                     <span>
-                        <span>{ t('navigation.my-work') }</span>
-                        { t('navigation.my-work') }
-                        <span>{ t('navigation.my-work') }</span>
+                        <span>{t("navigation.my-work")}</span>
+                        {t("navigation.my-work")}
+                        <span>{t("navigation.my-work")}</span>
                     </span>
                 </h2>
                 <ul>
@@ -28,7 +28,7 @@ const MyWork = () => {
                 </ul>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default MyWork
+export default MyWork;

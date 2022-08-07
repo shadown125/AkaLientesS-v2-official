@@ -64,7 +64,11 @@
                             transition: opacity 0.3s calc((var(--links-animation-duration) * var(--links-animation-multiplyer)) + var(--inital-animation-duration)) linear;
                         }
                         &::before {
-                            animation: anchor1 var(--links-animation-duration) calc(var(--links-animation-duration) + var(--inital-animation-duration) + (var(--links-animation-duration) / (var(--links-animation-multiplyer) * 2))) ease-in-out reverse;
+                            animation: anchor1 var(--links-animation-duration)
+                                calc(
+                                    var(--links-animation-duration) + var(--inital-animation-duration) + (var(--links-animation-duration) / (var(--links-animation-multiplyer) * 2))
+                                )
+                                ease-in-out reverse;
                         }
                     }
                 }
@@ -77,7 +81,8 @@
                             transition: opacity 0.3s calc(var(--links-animation-duration) + var(--inital-animation-duration)) linear;
                         }
                         &::before {
-                            animation: anchor1 var(--links-animation-duration) calc((var(--links-animation-duration) / var(--links-animation-multiplyer) + var(--inital-animation-duration))) ease-in-out;
+                            animation: anchor1 var(--links-animation-duration)
+                                calc((var(--links-animation-duration) / var(--links-animation-multiplyer) + var(--inital-animation-duration))) ease-in-out;
                         }
                     }
                 }

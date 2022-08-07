@@ -1,72 +1,76 @@
 {
-  "navigation": {
-    "facts": "Facts",
-    "skills": "Skills",
-    "my-work": "My Work"
-  },
-  "sections": {
-    "facts": {
-      "competitive-player": "Competitive Player",
-      "competitive-player-text": ["I started to play video games as a kid.,",
-        " I played many titles over the years but the one that completely dragged me in was League of Legends.",
-        " This game was something that got me into competitive gaming and made me want to become the best.",
-        " And I did. In my prime, I was the best Akali player in the world and in the top 100 Challenger (the highest rank in-game with 200 best players in)."],
-      "games": "Games",
-      "competitive": "Competitive",
-      "challenger": "Challenger",
-      "sport": "Sport",
-      "sport-text": ["Sport played a huge role in my life. ",
-        "I spent half of my life trying different disciplines.",
-        " As a kid, I dreamed about being a great football player and for quite a time I was serious about it.",
-        " I could spend my whole day training to become better. But after some years of training, ",
-        "I decided that it’s not the path I want to follow and started to spend more time on my computer playing video games and learning the basics of programming."
-      ],
-      "durability": "Durability",
-      "football": "Football",
-      "star": "Star",
-      "healthy-lifestyle": "Healthy lifestyle",
-      "healthy-lifestyle-text": ["Health is one of the most important things. It should always stand first. Therefore, in combination with sports, ",
-        "I try to eat healthy and live a healthy lifestyle. Despite that I like to eat some fast food from time to time because everything is for people ",
-        "but in moderation. A healthy lifestyle also gives a lot of long-term benefits and advantages,",
-        " that's why I try to live it as much as possible."
-      ],
-      "health": "Health",
-      "regularity": "Regularity",
-      "food": "Food"
+    "navigation": {
+        "facts": "Facts",
+        "skills": "Skills",
+        "my-work": "My Work"
     },
-    "skills": {
-      "structure": "Structure",
-      "architecture": "Architecture",
-      "grid": "Grid",
-      "beauty": "Beauty",
-      "animations": "Animations",
-      "cascade": "Cascade",
-      "everything": "Everything",
-      "effects": "Effects",
-      "v8-engine": "V8 Engine",
-      "dirty": "Dirty",
-      "all-in-one": "All in one",
-      "google": "Google"
+    "sections": {
+        "facts": {
+            "competitive-player": "Competitive Player",
+            "competitive-player-text": [
+                "I started to play video games as a kid.,",
+                " I played many titles over the years but the one that completely dragged me in was League of Legends.",
+                " This game was something that got me into competitive gaming and made me want to become the best.",
+                " And I did. In my prime, I was the best Akali player in the world and in the top 100 Challenger (the highest rank in-game with 200 best players in)."
+            ],
+            "games": "Games",
+            "competitive": "Competitive",
+            "challenger": "Challenger",
+            "sport": "Sport",
+            "sport-text": [
+                "Sport played a huge role in my life. ",
+                "I spent half of my life trying different disciplines.",
+                " As a kid, I dreamed about being a great football player and for quite a time I was serious about it.",
+                " I could spend my whole day training to become better. But after some years of training, ",
+                "I decided that it’s not the path I want to follow and started to spend more time on my computer playing video games and learning the basics of programming."
+            ],
+            "durability": "Durability",
+            "football": "Football",
+            "star": "Star",
+            "healthy-lifestyle": "Healthy lifestyle",
+            "healthy-lifestyle-text": [
+                "Health is one of the most important things. It should always stand first. Therefore, in combination with sports, ",
+                "I try to eat healthy and live a healthy lifestyle. Despite that I like to eat some fast food from time to time because everything is for people ",
+                "but in moderation. A healthy lifestyle also gives a lot of long-term benefits and advantages,",
+                " that's why I try to live it as much as possible."
+            ],
+            "health": "Health",
+            "regularity": "Regularity",
+            "food": "Food"
+        },
+        "skills": {
+            "structure": "Structure",
+            "architecture": "Architecture",
+            "grid": "Grid",
+            "beauty": "Beauty",
+            "animations": "Animations",
+            "cascade": "Cascade",
+            "everything": "Everything",
+            "effects": "Effects",
+            "v8-engine": "V8 Engine",
+            "dirty": "Dirty",
+            "all-in-one": "All in one",
+            "google": "Google"
+        },
+        "frameworks-and-libraries": "Frameworks and Libraries",
+        "my-work": {
+            "description-react": "Biggest React Project",
+            "content-react": "The largest React project I have created on my own.",
+            "description-sus": "The most ambitious Project",
+            "content-sus": "I really wanted to create something big. Something, I can develop over years.",
+            "description-chykara": "Android and iOS App for Training",
+            "content-chykara": "Training App on Android and iOS which will help you save the progress of your weights and reps in every Training."
+        },
+        "contact": {
+            "success-message": "Thank you for contacting me, I will answer you soon",
+            "failed-message": "Something went wrong. Please try again later"
+        }
     },
-    "frameworks-and-libraries": "Frameworks and Libraries",
-    "my-work": {
-      "description-react": "Biggest React Project",
-      "content-react": "The largest React project I have created on my own.",
-      "description-sus": "The most ambitious Project",
-      "content-sus": "I really wanted to create something big. Something, I can develop over years.",
-      "description-chykara": "Android and iOS App for Training",
-      "content-chykara": "Training App on Android and iOS which will help you save the progress of your weights and reps in every Training."
-    },
-    "contact": {
-      "success-message": "Thank you for contacting me, I will answer you soon",
-      "failed-message": "Something went wrong. Please try again later"
+    "validation": {
+        "valid-email": "E-Mail must be valid",
+        "required-email": "Email is required field. Please fill it to continue",
+        "required-subject": "Subject is required field. Please fill it to continue",
+        "required-message": "Message is required field. Please fill it to continue",
+        "min-message": "Message must have at least 10 characters"
     }
-  },
-  "validation": {
-    "valid-email": "E-Mail must be valid",
-    "required-email": "Email is required field. Please fill it to continue",
-    "required-subject": "Subject is required field. Please fill it to continue",
-    "required-message": "Message is required field. Please fill it to continue",
-    "min-message": "Message must have at least 10 characters"
-  }
 }

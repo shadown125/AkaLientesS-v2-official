@@ -1,66 +1,57 @@
 @font-face {
     font: {
-        family: "icomoon";
+        family: 'icomoon';
         weight: normal;
         style: normal;
         display: block;
     }
-    src:
-        url("/icomoon.woff?9xu6g5") format("woff"),
-        url("/icomoon.svg?9xu6g5#icomoon") format("svg");
+    src: url('/icomoon.woff?9xu6g5') format('woff'), url('/icomoon.svg?9xu6g5#icomoon') format('svg');
 }
 
 @font-face {
-    font-family: "Noto Sans JP";
+    font-family: 'Noto Sans JP';
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Sans JP Regular"), local("Noto-Sans-JP-Regular"),
-    url("/noto-sans-regular.woff2") format("woff2");
+    src: local('Noto Sans JP Regular'), local('Noto-Sans-JP-Regular'), url('/noto-sans-regular.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Noto Sans JP";
+    font-family: 'Noto Sans JP';
     font-style: normal;
     font-weight: 700;
-    src: local("Noto Sans JP Bold"), local("Noto-Sans-JP-Bold"),
-    url("/noto-sans-700.woff2") format("woff2");
+    src: local('Noto Sans JP Bold'), local('Noto-Sans-JP-Bold'), url('/noto-sans-700.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Noto Sans AK";
+    font-family: 'Noto Sans AK';
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Sans AK Regular"), local("Noto-Sans-AK-Regular"),
-    url("/akronim-regular.woff2") format("woff2");
+    src: local('Noto Sans AK Regular'), local('Noto-Sans-AK-Regular'), url('/akronim-regular.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Noto Sans Japan";
+    font-family: 'Noto Sans Japan';
     font-style: normal;
     font-weight: 900;
-    src: local("Noto Sans Japan Bold"), local("Noto-Sans-Japan-Bold"),
-    url("/noto-sans-jp-bold.woff2") format("woff2");
+    src: local('Noto Sans Japan Bold'), local('Noto-Sans-Japan-Bold'), url('/noto-sans-jp-bold.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Alex Brush";
+    font-family: 'Alex Brush';
     font-style: normal;
     font-weight: normal;
-    src: local("Alex Brush Regular"), local("alex-brush-regular"),
-    url("/alex-brush-regular.woff2") format("woff2");
+    src: local('Alex Brush Regular'), local('alex-brush-regular'), url('/alex-brush-regular.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Tapestry";
+    font-family: 'Tapestry';
     font-style: normal;
     font-weight: normal;
-    src: local("Tapestry Regular"), local("tapestry-regular"),
-    url("/tapestry-regular.woff2") format("woff2");
+    src: local('Tapestry Regular'), local('tapestry-regular'), url('/tapestry-regular.woff2') format('woff2');
     font-display: swap;
 }
-
