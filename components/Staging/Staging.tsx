@@ -33,8 +33,7 @@ const Staging = () => {
                         speed: 50,
                     })
                     .start()
-                    .reveal(3000)
-                    .stop();
+                    .reveal(3000);
             }
         }, animationDelay / 2);
 
