@@ -19,7 +19,7 @@ const HeadPage = () => {
             <meta name="twitter:site" content="@DawidOleksiuk" />
             <meta name="twitter:title" content="AkaLientesS" />
             <meta name="twitter:description" content="Discover my Portfolio to get information about me and also inspiration" />
-            <meta name="twitter:image" content="/seoAkalientess.png" />
+            <meta name="twitter:image" content="/seoAkalientess.jpg" />
 
             <link rel="alternate" href="https://www.akalientess.com/en" hrefLang="en" />
             <link rel="alternate" href="https://www.akalientess.com/pl" hrefLang="pl" />
