@@ -13,7 +13,7 @@ const HeadPage = () => {
             <meta property="og:type" content="website" />
             <meta property="og:description" content="Discover my Portfolio to get information about me and also inspiration." />
             <meta property="og:locale" content="pl_PL" />
-            <meta property="og:image" content="/seoAkalientess.png" />
+            <meta property="og:image" content="/seoAkalientess.jpg" />
             <meta property="og:url" content="https://www.akalientess.com/" />
             <meta property="og:locale:alternate" content="en_US" />
             <meta name="twitter:site" content="@DawidOleksiuk" />
