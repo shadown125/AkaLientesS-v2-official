@@ -1,4 +1,4 @@
-# AkaLientesS v2 - official
+<h1 align="center">AkaLientesS v2 - official - Beta (0.9.6v)</h1>
 
 :warning: Browser support: :warning:
 
@@ -39,13 +39,11 @@ If you want to change styles you need to run Sass watcher:
 npm run watch
 ```
 
-For Production, you need to run the build script for styles:
+For Production, you need to run the build script for optimized styles:
 
 ```bash
 npm run style:build
 ```
-
-<h3 style="color:orange;">Note!! This Website is in build progress which does not reflect the final state. The current state of the Website is in Alpha (0.9.5v)</h3>
 
 ## Learn More
 
