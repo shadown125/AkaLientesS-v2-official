@@ -105,8 +105,7 @@
                 }
             }
         }
-        &:hover,
-        &:focus {
+        &:hover {
             .path {
                 stroke: var(--color-secondary);
                 stroke-dashoffset: 0;
