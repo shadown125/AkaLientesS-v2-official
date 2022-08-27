@@ -35,6 +35,7 @@ class AnimatedImagesModule {
     private init() {
         PIXI.utils.skipHello();
 
+        document.body.addEventListener("orientationchange", this.resizeImages.bind(this), { passive: true });
         window.addEventListener("resize", this.resizeImages.bind(this), { passive: true });
         this.canvas.replaceWith(this.app.view);
 
