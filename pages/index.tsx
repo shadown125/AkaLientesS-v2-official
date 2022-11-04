@@ -28,12 +28,14 @@ const Home: NextPage = () => {
             <InitialPageLoader />
             <TsParticles />
             <Navigation />
-            <Staging />
-            <Facts />
-            <Skills />
-            <MyWork />
-            <Contact />
-            <SidebarLetters />
+            <main>
+                <Staging />
+                <Facts />
+                <Skills />
+                <MyWork />
+                <Contact />
+                <SidebarLetters />
+            </main>
             <FloatingLines />
         </>
     );
