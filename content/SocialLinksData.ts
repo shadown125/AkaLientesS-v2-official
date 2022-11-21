@@ -8,7 +8,7 @@ export const socialList = [
         name: "twitter",
     },
     {
-        link: "https://www.linkedin.com/in/dawid-ol-2478311a4/",
+        link: "https://www.linkedin.com/in/dawid-oleksiuk-2478311a4/",
         name: "linkedin",
     },
 ];
