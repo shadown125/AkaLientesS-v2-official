@@ -209,9 +209,6 @@
         object-fit: cover;
         transform: translateY(-101%);
         transition: transform 0.6s 0.45s ease-out;
-        @include susanoo.media(medium, 'min') {
-            opacity: 0;
-        }
     }
     .content {
         @include grid.grid-item-extend();
