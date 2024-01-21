@@ -76,11 +76,11 @@ export const skills = [
 export const frameworks = [
     {
         name: "React",
-        points: 3,
+        points: 4,
     },
     {
         name: "Next",
-        points: 3,
+        points: 4,
     },
     {
         name: "Vue",
