@@ -54,6 +54,8 @@
         },
         "frameworks-and-libraries": "Frameworki i Biblioteki",
         "my-work": {
+            "description-penify": "Platforma blogowa Penify",
+            "content-penify": "Penify to platforma aplikacji internetowych przeznaczona dla użytkowników, którzy nie są w stanie stworzyć własnego bloga, ale chcą dzielić się swoimi doświadczeniami. Penify umożliwia utworzenie własnego konta i własnych wpisów na blogu, które będą widoczne dla każdego użytkownika odwiedzającego witrynę. Projekt został stworzony przy użyciu React (stos T3) i Next.js jako frameworka.",
             "description-react": "Największy projekt w React",
             "content-react": "Największy projekt React, który stworzyłem samodzielnie.",
             "description-sus": "Najbardziej ambitny projekt",

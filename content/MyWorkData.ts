@@ -1,5 +1,12 @@
 export const projects = [
     {
+        name: "Penify",
+        description: "description-penify",
+        link: "https://www.penifyapp.com/",
+        image: "/penify-image.png",
+        content: "content-penify",
+    },
+    {
         name: "KataLientesS",
         description: "description-react",
         link: "https://www.katalientess.com",
