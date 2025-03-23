@@ -54,6 +54,12 @@
         },
         "frameworks-and-libraries": "Frameworks and Libraries",
         "my-work": {
+            "description-scrumbuiss": "Scrumbuiss project management software",
+            "content-scrumbuiss": "Scrumbuiss is a project management software that helps you manage your projects and tasks.",
+            "description-easycook": "EasyCook Recipe App",
+            "content-easycook": "EasyCook is a recipe app that helps you find the best recipes for your meals.",
+            "description-subscription-manager": "Subscription Manager",
+            "content-subscription-manager": "Subscription Manager is a web application that helps you manage your subscriptions.",
             "description-penify": "Penify blog platform",
             "content-penify": "Penify is a web application platform designed for users who are unable to create their own blog site but want to share their experiences. Penify allows you to create your own account and your own blog posts which will be seen by every user visiting the site. The project was created using React (T3 stack) and Next.js as a framework.",
             "description-react": "Biggest React Project",

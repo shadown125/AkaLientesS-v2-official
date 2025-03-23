@@ -1,5 +1,19 @@
 export const projects = [
     {
+        name: "Scrumbuiss",
+        description: "description-scrumbuiss",
+        link: "https://www.scrumbuiss.com/",
+        image: "/scrumbuiss-image.png",
+        content: "content-scrumbuiss",
+    },
+    {
+        name: "EasyCook",
+        description: "description-easycook",
+        link: "https://www.easycook.app/",
+        image: "/easycook-image.png",
+        content: "content-easycook",
+    },
+    {
         name: "Penify",
         description: "description-penify",
         link: "https://www.penifyapp.com/",
@@ -7,24 +21,10 @@ export const projects = [
         content: "content-penify",
     },
     {
-        name: "KataLientesS",
-        description: "description-react",
-        link: "https://www.katalientess.com",
-        image: "/katalientess.png",
-        content: "content-react",
-    },
-    {
-        name: "Chykara App",
-        description: "description-chykara",
-        link: "https://github.com/shadown125/chykara",
-        image: "/chykara.png",
-        content: "content-chykara",
-    },
-    {
-        name: "Susanoo CMS",
-        description: "description-sus",
-        link: "https://github.com/shadown125/SuSanoo",
-        image: "/susanoo.png",
-        content: "content-sus",
+        name: "Subscription Manager",
+        description: "description-subscription-manager",
+        link: "https://www.subscription-manager.app/",
+        image: "/subscription-manager-image.png",
+        content: "content-subscription-manager",
     },
 ];
